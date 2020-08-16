@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="663" height="335" viewBox="0 0 663 335">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.987" y1="0.5" x2="0.032" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#52becc"/>
+      <stop offset="1" stop-color="#5682b4"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" y1="0.5" x2="0.984" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5e8ccc"/>
+      <stop offset="1" stop-color="#41ecc5"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.015" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f9d377"/>
+      <stop offset="1" stop-color="#f86e68"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-9" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e498f1"/>
+      <stop offset="1" stop-color="#7d98fb"/>
+    </linearGradient>
+  </defs>
+  <g id="CodeLines" transform="translate(-256 -217)">
+    <g id="CodeLinesTop">
+      <rect id="Rectangle_81" data-name="Rectangle 81" width="189" height="24" rx="12" transform="translate(256 217)" fill="url(#linear-gradient)"/>
+      <g id="Rectangle_82" data-name="Rectangle 82" transform="translate(470 217)" fill="#adadad" stroke="rgba(112,112,112,0)" stroke-width="1">
+        <rect width="103" height="24" rx="12" stroke="none"/>
+        <rect x="0.5" y="0.5" width="102" height="23" rx="11.5" fill="none"/>
+      </g>
+      <g id="Rectangle_90" data-name="Rectangle 90" transform="translate(411 305)" fill="#adadad" stroke="rgba(112,112,112,0)" stroke-width="1">
+        <rect width="103" height="24" rx="12" stroke="none"/>
+        <rect x="0.5" y="0.5" width="102" height="23" rx="11.5" fill="none"/>
+      </g>
+      <g id="Rectangle_84" data-name="Rectangle 84" transform="translate(256 261)" stroke="rgba(112,112,112,0)" stroke-width="1" fill="url(#linear-gradient-2)">
+        <rect width="380" height="24" rx="12" stroke="none"/>
+        <rect x="0.5" y="0.5" width="379" height="23" rx="11.5" fill="none"/>
+      </g>
+      <g id="Rectangle_87" data-name="Rectangle 87" transform="translate(256 305)" stroke="rgba(112,112,112,0)" stroke-width="1" fill="url(#linear-gradient-3)">
+        <rect width="103" height="24" rx="12" stroke="none"/>
+        <rect x="0.5" y="0.5" width="102" height="23" rx="11.5" fill="none"/>
+      </g>
+      <g id="Rectangle_88" data-name="Rectangle 88" transform="translate(598 217)" fill="#adadad" stroke="rgba(112,112,112,0)" stroke-width="1">
+        <rect width="22" height="24" rx="11" stroke="none"/>
+        <rect x="0.5" y="0.5" width="21" height="23" rx="10.5" fill="none"/>
+      </g>
+      <g id="Rectangle_89" data-name="Rectangle 89" transform="translate(374 305)" fill="#adadad" stroke="rgba(112,112,112,0)" stroke-width="1">
+        <rect width="22" height="24" rx="11" stroke="none"/>
+        <rect x="0.5" y="0.5" width="21" height="23" rx="10.5" fill="none"/>
+      </g>
+    </g>
+    <g id="CodeLInesBottom">
+      <rect id="Rectangle_92" data-name="Rectangle 92" width="175" height="24" rx="12" transform="translate(256 528)" fill="url(#linear-gradient)"/>
+      <g id="Rectangle_93" data-name="Rectangle 93" transform="translate(453 528)" fill="#adadad" stroke="rgba(112,112,112,0)" stroke-width="1">
+        <rect width="103" height="24" rx="12" stroke="none"/>
+        <rect x="0.5" y="0.5" width="102" height="23" rx="11.5" fill="none"/>
+      </g>
+      <g id="Rectangle_91" data-name="Rectangle 91" transform="translate(256 486)" stroke="rgba(112,112,112,0)" stroke-width="1" fill="url(#linear-gradient-3)">
+        <rect width="206" height="24" rx="12" stroke="none"/>
+        <rect x="0.5" y="0.5" width="205" height="23" rx="11.5" fill="none"/>
+      </g>
+      <g id="Rectangle_94" data-name="Rectangle 94" transform="translate(578 528)" stroke="rgba(112,112,112,0)" stroke-width="1" fill="url(#linear-gradient-3)">
+        <rect width="341" height="24" rx="12" stroke="none"/>
+        <rect x="0.5" y="0.5" width="340" height="23" rx="11.5" fill="none"/>
+      </g>
+    </g>
+    <g id="CodeLineMiddle">
+      <rect id="Line2" width="189" height="24" rx="12" transform="translate(469 349)" fill="url(#linear-gradient)"/>
+      <g id="Line5" transform="translate(548 396)" fill="#adadad" stroke="rgba(112,112,112,0)" stroke-width="1">
+        <rect width="103" height="24" rx="12" stroke="none"/>
+        <rect x="0.5" y="0.5" width="102" height="23" rx="11.5" fill="none"/>
+      </g>
+      <g id="Line6" transform="translate(262 443)" stroke="rgba(112,112,112,0)" stroke-width="1" fill="url(#linear-gradient-2)">
+        <rect width="380" height="24" rx="12" stroke="none"/>
+        <rect x="0.5" y="0.5" width="379" height="23" rx="11.5" fill="none"/>
+      </g>
+      <g id="Line7" transform="translate(486 486)" stroke="rgba(112,112,112,0)" stroke-width="1" fill="url(#linear-gradient-9)">
+        <rect width="235" height="24" rx="12" stroke="none"/>
+        <rect x="0.5" y="0.5" width="234" height="23" rx="11.5" fill="none"/>
+      </g>
+      <g id="Line1" transform="translate(261 349)" stroke="rgba(112,112,112,0)" stroke-width="1" fill="url(#linear-gradient-9)">
+        <rect width="190" height="24" rx="12" stroke="none"/>
+        <rect x="0.5" y="0.5" width="189" height="23" rx="11.5" fill="none"/>
+      </g>
+      <g id="Line3" transform="translate(676 349)" fill="#adadad" stroke="rgba(112,112,112,0)" stroke-width="1">
+        <rect width="22" height="24" rx="11" stroke="none"/>
+        <rect x="0.5" y="0.5" width="21" height="23" rx="10.5" fill="none"/>
+      </g>
+      <g id="Line4" transform="translate(262 396)" stroke="rgba(112,112,112,0)" stroke-width="1" fill="url(#linear-gradient-3)">
+        <rect width="271" height="24" rx="12" stroke="none"/>
+        <rect x="0.5" y="0.5" width="270" height="23" rx="11.5" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

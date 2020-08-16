@@ -1,0 +1,31 @@
+import React from "react";
+import GlobalStyle from "../assets/styles/GlobalStyle";
+import Navigation from "../components/Navigation";
+import { ThemeProvider } from "styled-components";
+import mainTheme from "../assets/styles/mainTheme";
+import Footer from "../components/Footer";
+import PageColorsProvider from "../Providers/PageColorsProvider";
+import ImagesProvider from "../Providers/ImagesProvider";
+interface Props {
+  children: React.ReactChild;
+}
+const MainLayout = (props: Props) => {
+  const { children } = props;
+
+  return (
+    <ThemeProvider theme={mainTheme}>
+      <GlobalStyle />
+      <PageColorsProvider location={location}>
+        <ImagesProvider>
+          <>
+            <Navigation />
+            {children}
+            <Footer />
+          </>
+        </ImagesProvider>
+      </PageColorsProvider>
+    </ThemeProvider>
+  );
+};
+
+export default MainLayout;
