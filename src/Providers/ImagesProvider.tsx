@@ -7,8 +7,9 @@ export const ImagesContext = React.createContext({
   images: {
     hero: "",
     logo: "",
-    projectsbackground: "",
+    projects_background: "",
     background: "",
+    contact_background: "",
   },
 });
 interface Props {

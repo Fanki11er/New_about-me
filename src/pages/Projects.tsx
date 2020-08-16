@@ -5,21 +5,7 @@ import TopWrapper from "../components/TopWrapper";
 import useBackgroundImage from "../Hooks/useBackgroundImage";
 import ProjectsAnimation from "../components/ProjectsAnimation";
 import ProjectsSection from "../components/ProjectsSection";
-interface BackgroundImageUrl {
-  imageUrl: string;
-}
-const HeaderWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 80px 0 0 120px;
-  width: 500px;
-  height: 250px;
-  background-image: url(${(props: BackgroundImageUrl) => props.imageUrl});
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position-y: 50%;
-`;
+import HeaderWrapper from "../components/HeaderWrapper";
 
 const Header = styled.h1`
   font-size: ${({ theme }) => theme.fontSizes.XL};
@@ -32,13 +18,13 @@ const Header = styled.h1`
 `;
 
 const ProjectsPage = () => {
-  const { projectsbackground: projectsBackground } = useBackgroundImage();
+  const { projects_background } = useBackgroundImage();
   return (
     <>
       <SEO title="Projects" />
       <TopWrapper>
         <>
-          <HeaderWrapper imageUrl={projectsBackground}>
+          <HeaderWrapper imageUrl={projects_background}>
             <Header>
               <span>My</span> Projects
             </Header>

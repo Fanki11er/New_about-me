@@ -17,6 +17,7 @@ const PageColorsProvider = (props: Props) => {
   const locationsColors = {
     home: mainTheme.darkerBlue,
     projects: mainTheme.projects,
+    contact: mainTheme.contact,
   };
 
   const [currentColor, setCurrentColor] = useState<string>(
@@ -27,6 +28,10 @@ const PageColorsProvider = (props: Props) => {
     switch (pathname) {
       case "/Projects": {
         setCurrentColor(locationsColors.projects);
+        break;
+      }
+      case "/Contact": {
+        setCurrentColor(locationsColors.contact);
         break;
       }
       default: {

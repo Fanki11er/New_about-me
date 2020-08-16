@@ -10,6 +10,7 @@ interface MenuElementProps {
   label: string;
   iconUrl: string;
   newWindow?: boolean;
+  externalLink?: boolean;
 }
 
 interface Color {
@@ -118,12 +119,14 @@ const Navigation = () => {
           label={"GitHub"}
           iconUrl={icons.github}
           newWindow={true}
+          externalLink={true}
         />
         <MenuElement
           linkToPage={"https://www.linkedin.com/in/dziedzic-k/"}
           label={"LinkedIn"}
           iconUrl={icons.linkedin}
           newWindow={true}
+          externalLink={true}
         />
         <MenuElement
           linkToPage={"/About"}
@@ -148,17 +151,25 @@ const Navigation = () => {
 export default Navigation;
 
 const MenuElement = (props: MenuElementProps) => {
-  const { linkToPage, label, iconUrl, newWindow } = props;
+  const { linkToPage, label, iconUrl, newWindow, externalLink } = props;
   return (
     <ListElement>
-      <Link
-        to={linkToPage}
-        activeClassName={"isActive"}
-        target={newWindow ? "_blank" : ""}
-      >
-        <NavIcon src={iconUrl} />
-        <MenuLabel>{label}</MenuLabel>
-      </Link>
+      {!externalLink && (
+        <Link
+          to={linkToPage}
+          activeClassName={"isActive"}
+          target={newWindow ? "_blank" : ""}
+        >
+          <NavIcon src={iconUrl} />
+          <MenuLabel>{label}</MenuLabel>
+        </Link>
+      )}
+      {externalLink && (
+        <a href={linkToPage} target={newWindow ? "_blank" : ""}>
+          <NavIcon src={iconUrl} />
+          <MenuLabel>{label}</MenuLabel>
+        </a>
+      )}
     </ListElement>
   );
 };

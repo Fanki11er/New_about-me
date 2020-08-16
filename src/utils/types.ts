@@ -6,7 +6,8 @@ export type MainPageImages = {
   background: string;
   hero: string;
   logo: string;
-  projectsbackground: string;
+  projects_background: string;
+  contact_background: string;
 };
 
 export type MenuIconsPaths = {

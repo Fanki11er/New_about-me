@@ -25,6 +25,8 @@ const ProjectsAnimation = () => {
     const project2 = svg?.querySelector("#Project2");
     const project3 = svg?.querySelector("#Project3");
     const placeholder1 = svg?.querySelector("#Placeholder1");
+    const placeholder2 = svg?.querySelector("#Placeholder2");
+    const placeholder3 = svg?.querySelector("#Placeholder3");
     const line1 = svg?.querySelector("#Line1");
     const line2 = svg?.querySelector("#Line2");
     const line3 = svg?.querySelector("#Line3");
@@ -56,6 +58,7 @@ const ProjectsAnimation = () => {
         { x: "+=160", y: "-=160", duration: 2.5, ease: "Sine.easeOut" },
         "-=3.5"
       )
+      .to(placeholder1!, { opacity: "0", duration: "1" }, "-=1.7")
       .to(project2!, { opacity: 1, duration: 2 }, "-=3")
       .fromTo(
         project2!,
@@ -63,13 +66,15 @@ const ProjectsAnimation = () => {
         { x: "+=140", y: "-=160", duration: 2, ease: "Sine.easeOut" },
         "-=3"
       )
+      .to(placeholder2!, { opacity: "0", duration: "1" }, "-=1.7")
       .to(project3!, { opacity: 1, duration: 1.5 }, "-=2")
       .fromTo(
         project3!,
         { x: "-=130", y: "+=120" },
         { x: "+=130", y: "-=120", duration: 1.5, ease: "Sine.easeOut" },
         "-=2"
-      );
+      )
+      .to(placeholder3!, { opacity: "0", duration: "1" }, "-=1.2");
   };
 
   useEffect(() => {
