@@ -7,7 +7,7 @@ const Background = styled.svg`
   height: 100%;
   position: absolute;
   top: 0;
-  left: 0;
+  left: -1px;
   z-index: -1;
 `;
 

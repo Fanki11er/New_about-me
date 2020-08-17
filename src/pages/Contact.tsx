@@ -5,6 +5,7 @@ import TopWrapper from "../components/TopWrapper";
 import useBackgroundImage from "../Hooks/useBackgroundImage";
 import HeaderWrapper from "../components/HeaderWrapper";
 import AnimatedEnvelope from "../components/AnimatedEnvelope";
+import ContactForm from "../components/ContactForm";
 
 const Header = styled.h1`
   font-size: ${({ theme }) => theme.fontSizes.XL};
@@ -22,6 +23,13 @@ const StyledHeaderWrapper = styled(HeaderWrapper)`
   background-position-y: 25px;
 `;
 
+const ContactFormSection = styled.section`
+  width: 100%;
+  padding: 65px ${({ theme }) => theme.mainPadding};
+  display: flex;
+  justify-content: center;
+`;
+
 const ContactPage = () => {
   const { contact_background } = useBackgroundImage();
   return (
@@ -37,6 +45,9 @@ const ContactPage = () => {
           <AnimatedEnvelope />
         </>
       </TopWrapper>
+      <ContactFormSection>
+        <ContactForm />
+      </ContactFormSection>
     </>
   );
 };

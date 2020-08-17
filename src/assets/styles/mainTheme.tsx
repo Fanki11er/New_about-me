@@ -14,6 +14,8 @@ const mainTheme = {
   turquoise: "rgba(82, 188,203, 1)",
   projects: "rgba(58, 40, 118, 1)",
   contact: "rgba(59, 17, 66, 1)",
+  transparentContact: "rgba(59, 17, 66, 0.8)",
+  red: "rgba(217, 72, 99, 1)",
   fontSizes: {
     XS: "14px",
     S: "20px",

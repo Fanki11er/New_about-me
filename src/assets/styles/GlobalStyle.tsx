@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import mainTheme from "../styles/mainTheme";
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -40,7 +41,9 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
-
+.withError {
+  border: 2px solid ${mainTheme.red};
+}
 
 `;
 
