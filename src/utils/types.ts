@@ -47,3 +47,5 @@ export type ProjectType = {
     url: string;
   };
 };
+
+export type Status = "Ok" | "Err" | "Submitting" | "Wait";

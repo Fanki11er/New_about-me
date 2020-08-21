@@ -1,20 +1,14 @@
-import React from "react";
-import styled from "styled-components";
-import {
-  Formik,
-  FormikHelpers,
-  FormikProps,
-  Form,
-  Field,
-  FieldProps,
-  FormikErrors,
-} from "formik";
+import React, { useState } from "react";
+import styled, { ThemeProps } from "styled-components";
+import { Formik, Form, Field, FormikErrors } from "formik";
+import axios from "axios";
 import AnimatedSubmitButton from "./AnimatedSubmitButton";
+import { Status } from "../utils/types";
 
 const FormWrapper = styled.div`
   min-width: 350px;
   width: 75%;
-  height: 550px;
+  height: 720px;
 `;
 
 const StyledForm = styled(Form)`
@@ -76,6 +70,7 @@ const InputWrapper = styled.div`
   flex-direction: column;
   position: relative;
   justify-content: flex-end;
+  margin-top: 10px;
 `;
 
 const TextAreaWrapper = styled(InputWrapper)`
@@ -103,6 +98,7 @@ const Label = styled.label`
   color: transparent;
   transform: scale(0.7);
   transition: transform 0.5s 0.2s, color 0.5s 0.2s;
+  user-select: none;
 `;
 
 const Required = styled.sup`
@@ -128,6 +124,27 @@ const Button = styled.button`
   background-color: transparent;
   border: none;
   margin-top: 50px;
+  outline: none;
+  user-select: none;
+  border-radius: 16px;
+  :hover {
+    .buttonText {
+      fill: ${({ theme }) => theme.turquoise};
+    }
+  }
+`;
+interface ErrorProps {
+  errorStatus: boolean;
+}
+const SendError = styled.div`
+  color: ${(props: ErrorProps & ThemeProps<any>) =>
+    props.errorStatus ? props.theme.red : "transparent"};
+  font-size: ${({ theme }) => theme.fontSizes.XS};
+  font-weight: bold;
+  display: flex;
+  margin-top: 20px;
+  user-select: none;
+  transition: color 1s 2.5s;
 `;
 
 interface MyFormValues {
@@ -142,6 +159,9 @@ const ContactForm = () => {
     email: "",
     message: "",
   };
+
+  const [status, setStatus] = useState<Status>("Wait");
+  const [isErrorStatus, setIsErrorStatus] = useState(false);
 
   const validate = (values: MyFormValues) => {
     const errors = {} as FormikErrors<MyFormValues>;
@@ -158,13 +178,31 @@ const ContactForm = () => {
       <Formik
         initialValues={initialValues}
         validate={values => validate(values)}
-        onSubmit={(values, actions) => {
-          console.log({ values, actions });
-          alert(JSON.stringify(values, null, 2));
-          actions.setSubmitting(false);
+        onSubmit={(values, { setSubmitting, resetForm }) => {
+          setStatus("Submitting");
+          if (isErrorStatus) setIsErrorStatus(false);
+          axios
+            .post(
+              "https://us-central1-dziedzic-about-me.cloudfunctions.net/sendEmail",
+              values
+            )
+            .then(() => {
+              setStatus("Ok");
+              setSubmitting(false);
+              resetForm();
+            })
+            .catch(err => {
+              console.log(err);
+              setStatus("Err");
+              setIsErrorStatus(true);
+              setTimeout(() => {
+                setStatus("Wait");
+                setSubmitting(false);
+              }, 3000);
+            });
         }}
       >
-        {props => (
+        {({ isSubmitting }) => (
           <StyledForm>
             <Field name="name">
               {({ field, meta, errors }) => (
@@ -173,7 +211,7 @@ const ContactForm = () => {
                     id={"name"}
                     type="text"
                     {...field}
-                    placeholder="Name *"
+                    placeholder="Name (required)"
                     className={
                       meta.error && meta.touched ? "withError" : undefined
                     }
@@ -192,7 +230,7 @@ const ContactForm = () => {
                 <InputWrapper>
                   <StyledInput
                     id={"email"}
-                    type="email"
+                    type="e-mail"
                     {...field}
                     placeholder="E-mail"
                     className={
@@ -219,9 +257,10 @@ const ContactForm = () => {
                 </TextAreaWrapper>
               )}
             </Field>
-            <Button onClick={() => props.handleSubmit()}>
-              <AnimatedSubmitButton />
+            <Button type={"submit"} disabled={isSubmitting}>
+              <AnimatedSubmitButton status={status} />
             </Button>
+            <SendError errorStatus={isErrorStatus}>Please try again</SendError>
           </StyledForm>
         )}
       </Formik>
@@ -230,49 +269,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-/*<SubmitButton>
-              <svg width="323.593" height="98.973" viewBox="0 0 323.593 98.973">
-                <path
-                  id="SquareButton"
-                  d="M205.989,30.674c19.026-.023,29.251.925,30.08,22.073.59,15.058.119,47.916.119,55.024s-4,21.993-19.994,21.549-263.009-.786-279.119-.251-22.312-8.6-23.618-15.459c-.887-4.654-.98-63.757.124-67.468s3.883-15.908,20.651-15.784S186.963,30.7,205.989,30.674Z"
-                  transform="translate(87.226 -30.357)"
-                  fill="#2e2d40"
-                />
-                <circle
-                  id="RoundButton"
-                  cx="80"
-                  cy="80"
-                  r="80"
-                  fill="#2e2d40"
-                />
-              </svg>
-            </SubmitButton> */
-
-/*const SubmitButton = styled.button`
-  width: 120px;
-  height: 35px;
-  border: none;
-  background-color: transparent;
-
-  :hover #SquareButton {
-    opacity: 0;
-  }
-  :hover #RoundButton {
-    opacity: 1;
-    transform: scale(1) translate(87.226px, -30.357px);
-  }
-  svg {
-    object-fit: cover;
-  }
-
-  #SquareButton,
-  #RoundButton {
-    transition: opacity 0.5s, transform 0.5s;
-  }
-
-  #RoundButton {
-    opacity: 0;
-    transform: scale(0.5) translate(87.226px, -30.357px);
-    transform-origin: 50% 50%;
-    stroke: 2px solid green, 2px solid green;
-  }`; */

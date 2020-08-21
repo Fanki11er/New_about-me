@@ -1,16 +1,116 @@
-import React, { useRef, useEffect, RefObject } from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import gsap from "gsap";
+import { Status } from "../utils/types";
 
 const SvgImage = styled.svg`
   width: 100%;
   object-fit: cover;
+  pointer-events: none;
+  outline: none;
 
   @media screen and (max-width: 1280px) {
   }
 `;
 
-const AnimatedSubmitButton = () => {
+interface Props {
+  status: Status;
+}
+
+const AnimatedSubmitButton = (props: Props) => {
+  const { status } = props;
+  useEffect(() => {
+    const submittingAnimation = gsap.timeline();
+    const statusOkAnimation = gsap.timeline();
+    const goBack = gsap.timeline();
+    const svg = svgRef.current;
+    const roundButton = svg?.querySelector("#RoundButton");
+    const squareButton = svg?.querySelector("#SquareButton");
+    const roundBorder = svg?.querySelector("#RoundBorder");
+    const sendText = svg?.querySelector("#Send");
+    const okSign = svg?.querySelector("#OkSign");
+    const xSign = svg?.querySelector("#XSign");
+    gsap.set([squareButton!, roundBorder!], { transformOrigin: "center" });
+    gsap.set([okSign!, xSign!], { scale: "0.5", transformOrigin: "center" });
+    submittingAnimation
+      .to(roundButton!, {
+        opacity: "1",
+        duration: "2",
+      })
+      .to(sendText!, { autoAlpha: "0", duration: "1" }, "=-2.3")
+      .to(
+        squareButton!,
+        {
+          autoAlpha: "0",
+          duration: "0.6",
+          scaleX: "0.5",
+        },
+        "-=2"
+      )
+      .to(roundBorder!, { opacity: "1", duration: "2" }, "-=1.8")
+      .to(
+        roundBorder!,
+        {
+          rotate: "12000",
+          duration: "60",
+          ease: "Power0.easeInOut",
+        },
+        "-=2.5"
+      )
+      .pause();
+
+    const animateSign = (sign: Element) => {
+      return statusOkAnimation
+        .to(roundBorder!, { opacity: 0, duration: "1", delay: "1" })
+        .to(sign!, { opacity: "1", duration: "2" }, "-=0.3")
+        .to(
+          sign!,
+          {
+            scale: "1",
+            duration: "1.5",
+            ease: "Bounce.easeOut",
+          },
+          "-=2"
+        )
+        .pause();
+    };
+
+    goBack
+      .to([roundButton!, okSign!, xSign!, roundBorder!], {
+        opacity: "0",
+        duration: "1",
+      })
+      .to(
+        [squareButton!, sendText!],
+        { autoAlpha: "1", duration: "1", scale: "1" },
+        "-=1"
+      )
+      .pause();
+
+    const animation = (status: Status) => {
+      switch (status) {
+        case "Submitting": {
+          submittingAnimation.resume(0);
+          break;
+        }
+        case "Ok": {
+          submittingAnimation.pause();
+          animateSign(okSign!).play(0).invalidate();
+          break;
+        }
+        case "Err": {
+          animateSign(xSign!).play(0);
+
+          break;
+        }
+        default: {
+          goBack.play(0).delay(3);
+          break;
+        }
+      }
+    };
+    animation(status);
+  }, [status]);
   const svgRef = useRef<SVGSVGElement>(null);
   return (
     <SvgImage
@@ -18,6 +118,7 @@ const AnimatedSubmitButton = () => {
       height="180"
       viewBox="0 0 332 180"
       preserveAspectRatio="xMaxYMid meet"
+      ref={svgRef}
     >
       <g id="SubmitButton" transform="translate(-134 -641)">
         <rect
@@ -35,7 +136,7 @@ const AnimatedSubmitButton = () => {
           fontSize="45"
           fontFamily="Roboto-Regular, Roboto"
         >
-          <tspan x="0" y="0">
+          <tspan x="0" y="0" className={"buttonText"}>
             Send
           </tspan>
         </text>
@@ -55,7 +156,7 @@ const AnimatedSubmitButton = () => {
             fill="none"
             stroke="#f87a6a"
             strokeLinecap="round"
-            strokeWidth="8"
+            strokeWidth="10"
             strokeDasharray="80 60"
             opacity="0"
           >
