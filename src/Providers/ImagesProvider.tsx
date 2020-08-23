@@ -10,6 +10,11 @@ export const ImagesContext = React.createContext({
     projects_background: "",
     background: "",
     contact_background: "",
+    about_background: "",
+    person: "",
+    bulb: "",
+    not_found: "",
+    o4o_image: "",
   },
 });
 interface Props {
@@ -31,7 +36,7 @@ const ImagesProvider = (props: Props) => {
 
   const {
     allFile: { nodes },
-  } = data as any;
+  } = data as never;
 
   const images = getImages(nodes) as MainPageImages;
 

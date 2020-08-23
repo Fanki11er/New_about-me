@@ -8,6 +8,11 @@ export type MainPageImages = {
   logo: string;
   projects_background: string;
   contact_background: string;
+  about_background: string;
+  person: string;
+  bulb: string;
+  not_found: string;
+  o4o_image: string;
 };
 
 export type MenuIconsPaths = {
@@ -42,10 +47,22 @@ export type ProjectType = {
       username: string;
     }
   ];
-  projectPreview: {
-    alt: string;
-    url: string;
-  };
+  projectPreview: PictureWithAlt;
+};
+
+export type PictureWithAlt = {
+  alt: string;
+  url: string;
+};
+
+export type AboutContentParagraph = {
+  paragraph: string;
+  id: string;
+};
+
+export type singleAdditionalSkill = {
+  additionalSkill: string;
+  id: string;
 };
 
 export type Status = "Ok" | "Err" | "Submitting" | "Wait";

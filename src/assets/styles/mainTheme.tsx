@@ -17,6 +17,7 @@ const mainTheme = {
   transparentContact: "rgba(59, 17, 66, 0.8)",
   lightTurquoise: "rgba(66, 233, 197, 1)",
   red: "rgba(217, 72, 99, 1)",
+  darkBlue: "rgba(29, 35, 85, 1)",
   fontSizes: {
     XS: "14px",
     S: "20px",
