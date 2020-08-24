@@ -15,15 +15,6 @@ export type MainPageImages = {
   o4o_image: string;
 };
 
-export type MenuIconsPaths = {
-  github: string;
-  home: string;
-  contact: string;
-  linkedin: string;
-  about: string;
-  projects: string;
-};
-
 export type SkillType = {
   id: string;
   technologyName: string;

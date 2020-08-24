@@ -129,6 +129,7 @@ const Button = styled.button`
   border-radius: 16px;
   :hover {
     .buttonText {
+      transition: fill 0.5s;
       fill: ${({ theme }) => theme.turquoise};
     }
   }

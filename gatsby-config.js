@@ -24,13 +24,7 @@ module.exports = {
         path: `${__dirname}/src/assets/image`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `icons`,
-        path: `${__dirname}/src/assets/icons`,
-      },
-    },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -46,6 +40,10 @@ module.exports = {
         fonts: [
           {
             family: `Roboto`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Montserrat`,
             variants: [`400`, `700`],
           },
         ],

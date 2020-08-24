@@ -47,7 +47,7 @@ const Footer = () => {
   return (
     <FooterWrapper>
       <LogoWrapper>
-        <img src={publicURL} />
+        <img src={publicURL} alt={"Logo"} />
         <span>2020</span>
       </LogoWrapper>
       <FooterBackground />

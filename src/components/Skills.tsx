@@ -105,16 +105,13 @@ const SkillDescription = styled.li`
 const Skills = () => {
   const skills = useStaticQuery(graphql`
     {
-      allDatoCmsTechnology {
+      allDatoCmsTechnology(sort: { fields: position, order: ASC }) {
         nodes {
-          id
           logo {
-            alt
             url
           }
           level
           skills {
-            id
             skillDescription
           }
           technologyName
@@ -133,29 +130,41 @@ const renderSkill = (skills: SkillInterface) => {
     allDatoCmsTechnology: { nodes },
   } = skills;
 
-  return nodes
-    .sort((a, b) => {
-      return a.id.localeCompare(b.id);
-    })
-    .map(({ technologyName, level, logo, skills }) => {
-      return (
-        <SkillWrapper key={technologyName} imageUrl={logo.url}>
-          <DescriptionWrapper className={"description"}>
-            <SkillLevel className={"level"}>{level}</SkillLevel>
-            <List className={"list"}>
-              {skills.map(({ skillDescription, id }) => {
-                return (
-                  <SkillDescription key={id}>
-                    {skillDescription}
-                  </SkillDescription>
-                );
-              })}
-            </List>
-          </DescriptionWrapper>
-          <TechnologyName className={"technologyName"}>
-            {technologyName}
-          </TechnologyName>
-        </SkillWrapper>
-      );
-    });
+  return nodes.map(({ technologyName, level, logo, skills }) => {
+    return (
+      <SkillWrapper key={technologyName} imageUrl={logo.url}>
+        <DescriptionWrapper className={"description"}>
+          <SkillLevel className={"level"}>{level}</SkillLevel>
+          <List className={"list"}>
+            {skills.map(({ skillDescription, id }) => {
+              return (
+                <SkillDescription key={id}>{skillDescription}</SkillDescription>
+              );
+            })}
+          </List>
+        </DescriptionWrapper>
+        <TechnologyName className={"technologyName"}>
+          {technologyName}
+        </TechnologyName>
+      </SkillWrapper>
+    );
+  });
 };
+
+/*{
+      allDatoCmsTechnology {
+        nodes {
+          id
+          logo {
+            alt
+            url
+          }
+          level
+          skills {
+            id
+            skillDescription
+          }
+          technologyName
+        }
+      }
+    } */

@@ -1,14 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, ReactChild } from "react";
 import styled from "styled-components";
+import { Home2 as Home } from "@styled-icons/remix-fill";
+import { PageMultiple as Projects } from "@styled-icons/foundation";
+import { FilePersonFill as About } from "@styled-icons/bootstrap";
+import { Envelope } from "@styled-icons/boxicons-solid";
+import { Git } from "@styled-icons/boxicons-logos";
+import { Linkedin } from "@styled-icons/fa-brands";
 import { Link, useStaticQuery, graphql } from "gatsby";
-import { getImages } from "../utils/utils";
-import { MenuIconsPaths } from "../utils/types";
 import { PageColorsContext } from "../Providers/PageColorsProvider";
 
 interface MenuElementProps {
   linkToPage: string;
   label: string;
-  iconUrl: string;
+  children: ReactChild;
   newWindow?: boolean;
   externalLink?: boolean;
 }
@@ -61,6 +65,9 @@ const ListElement = styled.li`
       border: 2px solid ${({ theme }) => theme.turquoise};
       box-shadow: 0 0 4px 1px ${({ theme }) => theme.turquoise};
       border: 2px solid transparent;
+      .icon {
+        color: ${({ theme }) => theme.turquoise};
+      }
     }
   }
   .isActive {
@@ -68,6 +75,17 @@ const ListElement = styled.li`
     border: 2px solid ${({ theme }) => theme.turquoise};
     pointer-events: none;
     cursor: initial;
+    .icon {
+      color: ${({ theme }) => theme.turquoise};
+    }
+  }
+  .icon {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px 0 10px;
+    align-self: center;
+    color: ${({ theme }) => theme.transparentGray};
+    transition: color 0.5s;
   }
 `;
 const MenuLabel = styled.span`
@@ -78,13 +96,6 @@ const MenuLabel = styled.span`
   align-items: center;
 `;
 
-const NavIcon = styled.img`
-  width: 25px;
-  height: 25px;
-  margin: 0 5px 0 10px;
-  align-self: center;
-`;
-
 const Logo = styled.img`
   height: 75%;
   align-self: center;
@@ -93,56 +104,49 @@ const Logo = styled.img`
 
 const Navigation = () => {
   const {
-    allFile: { nodes: iconsUrls },
     file: { publicURL: logoUrl },
   } = useStaticQuery(graphql`
     {
-      allFile(filter: { dir: { regex: "/icons/" } }) {
-        nodes {
-          publicURL
-        }
-      }
       file(name: { regex: "/Logo/" }) {
         publicURL
       }
     }
   `);
-  const icons = getImages(iconsUrls) as MenuIconsPaths;
   const { currentColor } = useContext(PageColorsContext);
   return (
     <NavigationWrapper color={currentColor}>
-      <Logo src={logoUrl} />
+      <Logo src={logoUrl} alt={"Logo"} />
       <NavigationList>
-        <MenuElement linkToPage={"/"} label={"Home"} iconUrl={icons.home} />
+        <MenuElement linkToPage={"/"} label={"Home"}>
+          <Home className={"icon"} />
+        </MenuElement>
+        <MenuElement linkToPage={"/Projects"} label={"Projects"}>
+          <Projects className={"icon"} />
+        </MenuElement>
+
+        <MenuElement linkToPage={"/About"} label={"About"}>
+          <About className={"icon"} />
+        </MenuElement>
+
+        <MenuElement linkToPage={"/Contact"} label={"Contact"}>
+          <Envelope className={"icon"} />
+        </MenuElement>
         <MenuElement
           linkToPage={"https://github.com/Fanki11er"}
           label={"GitHub"}
-          iconUrl={icons.github}
           newWindow={true}
           externalLink={true}
-        />
+        >
+          <Git className={"icon"} />
+        </MenuElement>
         <MenuElement
           linkToPage={"https://www.linkedin.com/in/dziedzic-k/"}
           label={"LinkedIn"}
-          iconUrl={icons.linkedin}
           newWindow={true}
           externalLink={true}
-        />
-        <MenuElement
-          linkToPage={"/About"}
-          label={"About"}
-          iconUrl={icons.about}
-        />
-        <MenuElement
-          linkToPage={"/Projects"}
-          label={"Projects"}
-          iconUrl={icons.projects}
-        />
-        <MenuElement
-          linkToPage={"/Contact"}
-          label={"Contact"}
-          iconUrl={icons.contact}
-        />
+        >
+          <Linkedin className={"icon"} />
+        </MenuElement>
       </NavigationList>
     </NavigationWrapper>
   );
@@ -151,7 +155,7 @@ const Navigation = () => {
 export default Navigation;
 
 const MenuElement = (props: MenuElementProps) => {
-  const { linkToPage, label, iconUrl, newWindow, externalLink } = props;
+  const { linkToPage, label, children, newWindow, externalLink } = props;
   return (
     <ListElement>
       {!externalLink && (
@@ -160,13 +164,13 @@ const MenuElement = (props: MenuElementProps) => {
           activeClassName={"isActive"}
           target={newWindow ? "_blank" : ""}
         >
-          <NavIcon src={iconUrl} />
+          {children}
           <MenuLabel>{label}</MenuLabel>
         </Link>
       )}
       {externalLink && (
         <a href={linkToPage} target={newWindow ? "_blank" : ""}>
-          <NavIcon src={iconUrl} />
+          {children}
           <MenuLabel>{label}</MenuLabel>
         </a>
       )}

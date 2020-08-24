@@ -150,7 +150,7 @@ const IndexPage = () => {
             </Title>
             <ProjectsButton to={"/Projects"}>Check my projects</ProjectsButton>
           </TitleWrapper>
-          <HeroImage src={hero} />
+          <HeroImage src={hero} alt={"Hero image"} />
         </>
       </TopWrapper>
       <Skills />

@@ -84,7 +84,7 @@ const AboutSection = () => {
           id
         }
       }
-      allDatoCmsSingleAdditionalSkill(sort: { fields: position }) {
+      allDatoCmsSingleAdditionalSkill(sort: { fields: position, order: ASC }) {
         nodes {
           additionalSkill
           id

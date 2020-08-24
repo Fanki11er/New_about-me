@@ -70,7 +70,7 @@ const LinksWrapper = styled.div`
   align-items: flex-end;
 `;
 
-const Link = styled.a`
+const OutsideLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,7 +122,7 @@ const ProjectsSection = () => {
     allDatoCmsProject: { nodes },
   } = useStaticQuery(graphql`
     {
-      allDatoCmsProject {
+      allDatoCmsProject(sort: { fields: position, order: ASC }) {
         nodes {
           position
           projectName
@@ -182,12 +182,12 @@ const renderProjectsData = (projectData: ProjectType[]) => {
             <Screenshot src={url} alt={alt} />
           </ContentWrapper>
           <LinksWrapper>
-            <Link href={githubLink} target="_blank">
+            <OutsideLink href={githubLink} target="_blank">
               <span>Go</span>to code
-            </Link>
-            <Link href={appLink} target="_blank">
+            </OutsideLink>
+            <OutsideLink href={appLink} target="_blank">
               <span>Go</span>to demo
-            </Link>
+            </OutsideLink>
           </LinksWrapper>
         </SingleProject>
       );
