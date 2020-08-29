@@ -34,10 +34,7 @@ const TitleWrapper = styled.div`
   }
 
   @media screen and (max-width: 560px) {
-    height: 200px;
-    min-width: 260px;
-    margin-top: 40px;
-    padding-left: 15px;
+    min-width: 380px;
   }
 `;
 
@@ -63,8 +60,6 @@ const Title = styled.div`
     margin-top: 50px;
   }
   @media screen and (max-width: 560px) {
-    height: 65px;
-    margin-top: 47px;
     margin-left: 30px;
     padding-left: 0px;
   }
@@ -117,7 +112,6 @@ const SmallHeader = styled.h2`
     margin: 15px 0 10px 0;
   }
   @media screen and (max-width: 560px) {
-    font-size: calc(${({ theme }) => theme.fontSizes.XS} - 0.2rem);
     margin: 15px 0 5px 0;
   }
 `;
@@ -132,10 +126,8 @@ const MainHeader = styled.h1`
   @media screen and (max-width: 960px) {
     font-size: calc(${({ theme }) => theme.fontSizes.M} - 0.3rem);
   }
-
   @media screen and (max-width: 560px) {
-    font-size: calc(${({ theme }) => theme.fontSizes.XS} - 0.2rem);
-    margin: 5px 0 15px 0;
+    margin: 5px 0 5px 0;
   }
 `;
 
@@ -152,7 +144,7 @@ const ProjectsButton = styled(Link)`
   margin-left: 70px;
   transition: color 0.4s;
   margin-bottom: 25px;
-  z-index: 10;
+  z-index: 5;
 
   &:hover {
     color: ${({ theme }) => theme.turquoise};
@@ -185,12 +177,7 @@ const ProjectsButton = styled(Link)`
   }
 
   @media screen and (max-width: 568px) {
-    width: 110px;
-    height: 25px;
-    font-size: ${({ theme }) => theme.fontSizes.XXS};
-    margin-bottom: 45px;
-    margin-left: 0;
-    border-radius: 10px;
+    margin-left: -10%;
   }
 `;
 
@@ -250,3 +237,10 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+/*  @media screen and (max-width: 560px) {
+    height: 200px;
+    min-width: 260px;
+    margin-top: 40px;
+    padding-left: 15px;
+  } */

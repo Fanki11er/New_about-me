@@ -27,15 +27,20 @@ const NavigationList = styled.ul`
   height: 100%;
   width: 80%;
   @media screen and (max-width: 960px) {
-    width: 90%;
+    padding: 0 25px;
+    justify-content: space-around;
   }
   @media screen and (max-width: 768px) {
+    padding: 0 15px;
+  }
+
+  @media screen and (max-width: 560px) {
     visibility: hidden;
   }
 `;
 
 const NavigationWrapper = styled.nav`
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -47,19 +52,20 @@ const NavigationWrapper = styled.nav`
   font-size: ${({ theme }) => theme.fontSizes.XS};
   color: ${({ theme }) => theme.darkerBlue};
   font-weight: 700;
-  z-index: 5;
+  z-index: 8;
   color: ${({ theme }) => theme.gray};
   @media screen and (max-width: 960px) {
     padding: 0 calc(${({ theme }) => theme.mainPadding} - 50px);
   }
-  @media screen and (max-width: 768px) {
-    height: 65px;
-  }
 
   @media screen and (max-width: 768px) {
     padding: 0 15px;
-    height: 45px;
     min-width: ${({ theme }) => theme.minScreen};
+    height: 65px;
+  }
+  @media screen and (max-width: 560px) {
+    padding: 0 15px;
+    height: 80px;
   }
 `;
 
@@ -105,6 +111,14 @@ const ListElement = styled.li`
     color: ${({ theme }) => theme.transparentGray};
     transition: color 0.5s;
   }
+
+  @media screen and (max-width: 960px) {
+    transform: scale(0.8);
+  }
+  @media screen and (max-width: 768px) {
+    transform: scale(0.7);
+    margin-left: -25px;
+  }
 `;
 const MenuLabel = styled.span`
   display: flex;
@@ -118,6 +132,9 @@ const Logo = styled.img`
   height: 75%;
   align-self: center;
   justify-content: flex-start;
+  @media screen and (max-width: 960px) {
+    height: 65%;
+  }
   @media screen and (max-width: 768px) {
     height: 55%;
   }

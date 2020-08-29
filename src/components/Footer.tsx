@@ -10,8 +10,14 @@ const FooterWrapper = styled.footer`
   z-index: 2;
   justify-content: flex-end;
   min-width: ${({ theme }) => theme.minScreen};
+  @media screen and (max-width: 768px) {
+    height: 150px;
+  }
   @media screen and (max-width: 568px) {
-    height: 180px;
+    width: 150%;
+    height: 100px;
+    transform: translateX(-45vw);
+    margin-top: 8vw;
   }
 `;
 
@@ -38,15 +44,20 @@ const LogoWrapper = styled.div`
     @media screen and (max-width: 768px) {
       font-size: ${({ theme }) => theme.fontSizes.XS};
     }
-    @media screen and (max-width: 568px) {
-      font-size: ${({ theme }) => theme.fontSizes.XXS};
-    }
+  }
+  @media screen and (max-width: 960px) {
+    margin-bottom: 35px;
   }
   @media screen and (max-width: 768px) {
     margin-bottom: 4%;
   }
   @media screen and (max-width: 568px) {
     margin-right: 25px;
+    width: 13%;
+    margin-bottom: 27px;
+  }
+  @media screen and (max-width: 320px) {
+    margin-bottom: 18px;
   }
 `;
 

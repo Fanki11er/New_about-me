@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     overflow-x: hidden;
+    position: relative;
 
   }
   *,
@@ -20,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100vw;
     min-width: ${mainTheme.minScreen};
     position: relative;
+    
 
     
   }

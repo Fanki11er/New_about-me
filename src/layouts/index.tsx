@@ -8,7 +8,7 @@ import PageColorsProvider from "../Providers/PageColorsProvider";
 import ImagesProvider from "../Providers/ImagesProvider";
 interface Props {
   children: React.ReactChild;
-  location: any;
+  location: Location;
 }
 const MainLayout = (props: Props) => {
   const { children, location } = props;

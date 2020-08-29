@@ -62,8 +62,8 @@ module.exports = {
         name: `dziedzic-about-me`,
         short_name: `about-me`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#000000`,
+        theme_color: `#000000`,
         display: `minimal-ui`,
         icon: `src/assets/favico/Logo.png`, // This path is relative to the root of the site.
       },

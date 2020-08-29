@@ -12,6 +12,9 @@ const BackgroundSvg = styled.svg`
   @media screen and (max-width: 1024px) {
     height: 17vw;
   }
+  @media screen and (max-width: 568px) {
+    height: 30vw;
+  }
 `;
 
 const FooterBackground = () => {

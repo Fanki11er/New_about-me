@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   height: 555px;
   display: flex;
   position: relative;
-  margin-top: -1px;
+  margin-top: 79px;
   align-items: center;
   @media screen and (max-width: 1280px) {
     height: 500px;
@@ -19,11 +19,13 @@ const Wrapper = styled.div`
 
   @media screen and (max-width: 768px) {
     height: 300px;
+    margin-top: 60px;
   }
 
   @media screen and (max-width: 560px) {
-    height: 200px;
+    width: 150%;
     min-width: ${({ theme }) => theme.minScreen};
+    margin-top: 60px;
   }
 `;
 interface Props {
@@ -40,3 +42,8 @@ const TopWrapper = (props: Props) => {
 };
 
 export default TopWrapper;
+
+/*  @media screen and (max-width: 560px) {
+    height: 200px;
+    min-width: ${({ theme }) => theme.minScreen};
+  } */
