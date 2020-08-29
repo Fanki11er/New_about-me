@@ -9,6 +9,10 @@ const BackgroundSvg = styled.svg`
   position: absolute;
   left: 0;
   bottom: 0;
+
+  @media screen and (min-width: 1600px) {
+    height: 17vw;
+  }
   @media screen and (max-width: 1024px) {
     height: 17vw;
   }

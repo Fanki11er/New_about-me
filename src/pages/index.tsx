@@ -19,6 +19,11 @@ const TitleWrapper = styled.div`
   height: 450px;
   padding-left: 30px;
   margin-top: 30px;
+
+  @media screen and (min-width: 1600px) {
+    height: 550px;
+  }
+
   @media screen and (max-width: 1280px) {
     margin-top: 70px;
   }
@@ -46,6 +51,10 @@ const Title = styled.div`
   height: 135px;
   margin-top: 135px;
   padding-left: 40px;
+
+  @media screen and (min-width: 1600px) {
+    padding-left: 25%;
+  }
 
   @media screen and (max-width: 1280px) {
     margin-top: 95px;

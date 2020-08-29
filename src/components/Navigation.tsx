@@ -26,6 +26,11 @@ const NavigationList = styled.ul`
   justify-content: space-between;
   height: 100%;
   width: 80%;
+
+  @media screen and (min-width: 1600px) {
+    width: 70%;
+  }
+
   @media screen and (max-width: 960px) {
     padding: 0 25px;
     justify-content: space-around;
@@ -54,6 +59,11 @@ const NavigationWrapper = styled.nav`
   font-weight: 700;
   z-index: 8;
   color: ${({ theme }) => theme.gray};
+
+  @media screen and (min-width: 1600px) {
+    height: 120px;
+  }
+
   @media screen and (max-width: 960px) {
     padding: 0 calc(${({ theme }) => theme.mainPadding} - 50px);
   }
@@ -110,6 +120,10 @@ const ListElement = styled.li`
     align-self: center;
     color: ${({ theme }) => theme.transparentGray};
     transition: color 0.5s;
+  }
+
+  @media screen and (min-width: 1600px) {
+    transform: scale(1.3);
   }
 
   @media screen and (max-width: 960px) {

@@ -10,6 +10,12 @@ const FooterWrapper = styled.footer`
   z-index: 2;
   justify-content: flex-end;
   min-width: ${({ theme }) => theme.minScreen};
+
+  @media screen and (min-width: 1600px) {
+    height: 17vw;
+    margin-top: 3vw;
+  }
+
   @media screen and (max-width: 768px) {
     height: 150px;
   }
@@ -44,6 +50,14 @@ const LogoWrapper = styled.div`
     @media screen and (max-width: 768px) {
       font-size: ${({ theme }) => theme.fontSizes.XS};
     }
+    @media screen and (min-width: 1600px) {
+      font-size: ${({ theme }) => theme.fontSizes.M};
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+    width: 11%;
+    margin-bottom: 55px;
   }
   @media screen and (max-width: 960px) {
     margin-bottom: 35px;

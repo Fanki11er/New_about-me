@@ -9,6 +9,12 @@ const Wrapper = styled.div`
   position: relative;
   margin-top: 79px;
   align-items: center;
+
+  @media screen and (min-width: 1600px) {
+    height: 700px;
+    margin-top: 115px;
+  }
+
   @media screen and (max-width: 1280px) {
     height: 500px;
   }
@@ -42,8 +48,3 @@ const TopWrapper = (props: Props) => {
 };
 
 export default TopWrapper;
-
-/*  @media screen and (max-width: 560px) {
-    height: 200px;
-    min-width: ${({ theme }) => theme.minScreen};
-  } */
