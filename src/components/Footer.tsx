@@ -5,10 +5,14 @@ import { useStaticQuery, graphql } from "gatsby";
 
 const FooterWrapper = styled.footer`
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 250px;
   z-index: 2;
   justify-content: flex-end;
+  min-width: ${({ theme }) => theme.minScreen};
+  @media screen and (max-width: 568px) {
+    height: 180px;
+  }
 `;
 
 const LogoWrapper = styled.div`
@@ -30,6 +34,19 @@ const LogoWrapper = styled.div`
     font-size: ${({ theme }) => theme.fontSizes.S};
     font-weight: bold;
     margin-right: 20px;
+    margin-left: 5px;
+    @media screen and (max-width: 768px) {
+      font-size: ${({ theme }) => theme.fontSizes.XS};
+    }
+    @media screen and (max-width: 568px) {
+      font-size: ${({ theme }) => theme.fontSizes.XXS};
+    }
+  }
+  @media screen and (max-width: 768px) {
+    margin-bottom: 4%;
+  }
+  @media screen and (max-width: 568px) {
+    margin-right: 25px;
   }
 `;
 

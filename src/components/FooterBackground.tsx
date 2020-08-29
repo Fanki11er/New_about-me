@@ -3,12 +3,15 @@ import styled from "styled-components";
 import useChangeSvgColor from "../Hooks/useChangeSvgColor";
 
 const BackgroundSvg = styled.svg`
-  width: 100vw;
+  width: 100%;
   height: 230px;
 
   position: absolute;
   left: 0;
   bottom: 0;
+  @media screen and (max-width: 1024px) {
+    height: 17vw;
+  }
 `;
 
 const FooterBackground = () => {

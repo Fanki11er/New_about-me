@@ -18,7 +18,9 @@ const mainTheme = {
   lightTurquoise: "rgba(66, 233, 197, 1)",
   red: "rgba(217, 72, 99, 1)",
   darkBlue: "rgba(29, 35, 85, 1)",
+  minScreen: "360px",
   fontSizes: {
+    XXS: "10px",
     XS: "14px",
     S: "20px",
     M: "25px",

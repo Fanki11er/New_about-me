@@ -8,6 +8,13 @@ const Svg = styled.svg`
   left: 50px;
   width: 100%;
   object-fit: fill;
+
+  @media screen and (max-width: 1280px) {
+    width: 80%;
+  }
+  @media screen and (max-width: 560px) {
+    left: 25px;
+  }
 `;
 
 const AnimatedCodeLine = () => {
@@ -68,7 +75,13 @@ const AnimatedCodeLine = () => {
   });
 
   return (
-    <Svg width="663" height="335" viewBox="0 0 663 335" ref={animatedCodeLines}>
+    <Svg
+      width="663"
+      height="335"
+      viewBox="0 0 663 335"
+      ref={animatedCodeLines}
+      preserveAspectRatio="xMidYMin meet"
+    >
       <defs>
         <linearGradient
           id="linear-gradient"

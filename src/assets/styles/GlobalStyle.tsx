@@ -4,6 +4,8 @@ import mainTheme from "../styles/mainTheme";
 const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
+    overflow-x: hidden;
+
   }
   *,
   *::before,
@@ -14,9 +16,12 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'Roboto';
-    width: 100vw;
     overflow-x: hidden;
+    width: 100vw;
+    min-width: ${mainTheme.minScreen};
     position: relative;
+
+    
   }
   button {
     display: flex;
@@ -33,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
+    color: inherit;
   }
   a:hover {
     cursor: pointer;

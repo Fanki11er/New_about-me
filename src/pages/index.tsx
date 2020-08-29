@@ -9,61 +9,117 @@ import TopWrapper from "../components/TopWrapper";
 import useBackgroundImage from "../Hooks/useBackgroundImage";
 
 const TitleWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  min-height: 550px;
-  min-width: 200px;
-  height: 450px;
-  padding-left: 30px;
-  margin-top: 1vh;
-`;
-
-const Title = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 90%;
-  height: 75%;
-  padding-left: 40px;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  min-width: 615px;
+  height: 450px;
+  padding-left: 30px;
   margin-top: 30px;
+  @media screen and (max-width: 1280px) {
+    margin-top: 70px;
+  }
+
+  @media screen and (max-width: 960px) {
+    height: 350px;
+    min-width: 450px;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 280px;
+    min-width: 360px;
+  }
+
+  @media screen and (max-width: 560px) {
+    height: 200px;
+    min-width: 260px;
+    margin-top: 40px;
+    padding-left: 15px;
+  }
+`;
+
+const Title = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 135px;
+  margin-top: 135px;
+  padding-left: 40px;
 
   @media screen and (max-width: 1280px) {
-    margin-top: 0;
+    margin-top: 95px;
+  }
+
+  @media screen and (max-width: 960px) {
+    margin-top: 60px;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 110px;
+    margin-top: 50px;
+  }
+  @media screen and (max-width: 560px) {
+    height: 65px;
+    margin-top: 47px;
+    margin-left: 30px;
+    padding-left: 0px;
   }
 `;
 
 const HeroImage = styled.img`
-  display: flex;
-  justify-self: flex-end;
-  align-self: flex-start;
+  position: absolute;
   object-fit: contain;
-  top: 20%;
-  right: 10%;
   width: 60%;
   max-width: 320px;
   z-index: 2;
-  margin-left: 18%;
-  margin-top: 10%;
+  right: 7%;
+  bottom: 10%;
+
+  @media screen and (max-width: 1280px) {
+    width: 22vw;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 20vw;
+  }
+  @media screen and (max-width: 560px) {
+    width: 22vw;
+  }
 `;
 
 const HeaderWrapper = styled.div`
   width: 100%;
+  min-width: 340px;
   height: 105px;
   margin: 0 0 40px 90px;
   opacity: 0;
 
-  @media screen and (max-width: 1280px) {
-    margin: 0 0 10px 90px;
+  @media screen and (max-width: 768px) {
+    margin: 0 0 40px 30px;
+  }
+  @media screen and (max-width: 560px) {
+    min-width: 200px;
   }
 `;
 
 const SmallHeader = styled.h2`
   color: ${({ theme }) => theme.veryLightBlue};
   margin: 15px 0 20px 0;
+  @media screen and (max-width: 1024px) {
+  }
+
+  @media screen and (max-width: 960px) {
+    font-size: calc(${({ theme }) => theme.fontSizes.S} - 0.3rem);
+    margin: 15px 0 10px 0;
+  }
+  @media screen and (max-width: 560px) {
+    font-size: calc(${({ theme }) => theme.fontSizes.XS} - 0.2rem);
+    margin: 15px 0 5px 0;
+  }
 `;
 
 const MainHeader = styled.h1`
@@ -71,6 +127,15 @@ const MainHeader = styled.h1`
   margin: 10px 0 15px 0;
   span {
     color: ${({ theme }) => theme.orange};
+  }
+
+  @media screen and (max-width: 960px) {
+    font-size: calc(${({ theme }) => theme.fontSizes.M} - 0.3rem);
+  }
+
+  @media screen and (max-width: 560px) {
+    font-size: calc(${({ theme }) => theme.fontSizes.XS} - 0.2rem);
+    margin: 5px 0 15px 0;
   }
 `;
 
@@ -85,8 +150,9 @@ const ProjectsButton = styled(Link)`
   color: white;
   font-size: ${({ theme }) => theme.fontSizes.M};
   margin-left: 70px;
-  margin-bottom: 65px;
   transition: color 0.4s;
+  margin-bottom: 25px;
+  z-index: 10;
 
   &:hover {
     color: ${({ theme }) => theme.turquoise};
@@ -99,7 +165,32 @@ const ProjectsButton = styled(Link)`
   }
 
   @media screen and (max-width: 1280px) {
-    margin-bottom: 125px;
+    margin-bottom: 65px;
+  }
+
+  @media screen and (max-width: 960px) {
+    font-size: ${({ theme }) => theme.fontSizes.S};
+    width: 220px;
+    height: 50px;
+    margin-left: 0px;
+    margin-right: 5%;
+    margin-bottom: 65px;
+  }
+  @media screen and (max-width: 768px) {
+    width: 160px;
+    height: 40px;
+    font-size: ${({ theme }) => theme.fontSizes.XS};
+    margin-bottom: 60px;
+    margin-left: 10%;
+  }
+
+  @media screen and (max-width: 568px) {
+    width: 110px;
+    height: 25px;
+    font-size: ${({ theme }) => theme.fontSizes.XXS};
+    margin-bottom: 45px;
+    margin-left: 0;
+    border-radius: 10px;
   }
 `;
 

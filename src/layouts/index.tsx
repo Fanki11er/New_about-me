@@ -8,9 +8,10 @@ import PageColorsProvider from "../Providers/PageColorsProvider";
 import ImagesProvider from "../Providers/ImagesProvider";
 interface Props {
   children: React.ReactChild;
+  location: any;
 }
 const MainLayout = (props: Props) => {
-  const { children } = props;
+  const { children, location } = props;
 
   return (
     <ThemeProvider theme={mainTheme}>

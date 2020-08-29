@@ -26,6 +26,12 @@ const NavigationList = styled.ul`
   justify-content: space-between;
   height: 100%;
   width: 80%;
+  @media screen and (max-width: 960px) {
+    width: 90%;
+  }
+  @media screen and (max-width: 768px) {
+    visibility: hidden;
+  }
 `;
 
 const NavigationWrapper = styled.nav`
@@ -36,13 +42,25 @@ const NavigationWrapper = styled.nav`
   justify-content: space-between;
   padding: 0 ${({ theme }) => theme.mainPadding};
   height: 90px;
-  width: 100vw;
+  width: 100%;
   background-color: ${(props: Color) => props.color};
   font-size: ${({ theme }) => theme.fontSizes.XS};
   color: ${({ theme }) => theme.darkerBlue};
   font-weight: 700;
   z-index: 5;
   color: ${({ theme }) => theme.gray};
+  @media screen and (max-width: 960px) {
+    padding: 0 calc(${({ theme }) => theme.mainPadding} - 50px);
+  }
+  @media screen and (max-width: 768px) {
+    height: 65px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0 15px;
+    height: 45px;
+    min-width: ${({ theme }) => theme.minScreen};
+  }
 `;
 
 const ListElement = styled.li`
@@ -100,6 +118,9 @@ const Logo = styled.img`
   height: 75%;
   align-self: center;
   justify-content: flex-start;
+  @media screen and (max-width: 768px) {
+    height: 55%;
+  }
 `;
 
 const Navigation = () => {
