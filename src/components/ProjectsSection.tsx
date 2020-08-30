@@ -13,12 +13,29 @@ const ProjectsWrapper = styled.section`
 `;
 
 const SingleProject = styled.article`
+  position: relative;
   width: 80%;
-  height: 450px;
+  max-width: 1350px;
+  min-width: 320px;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: ${({ theme }) => theme.lightGray};
   border-radius: 85px;
   padding: 40px 30px 30px 0;
   margin: 50px 0;
+
+  @media screen and (max-width: 960px) {
+    min-height: 700px;
+    padding: 40px 15px;
+  }
+
+  @media screen and (max-width: 560px) {
+    min-height: 800px;
+    width: 100%;
+    border-radius: 60px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -27,17 +44,31 @@ const ContentWrapper = styled.div`
   width: 100%;
   height: 80%;
   padding-left: 55px;
-  position: relative;
+
+  @media screen and (max-width: 960px) {
+    padding: 0 45px;
+  }
+  @media screen and (max-width: 560px) {
+    padding: 0 15px;
+  }
 `;
 
 const Content = styled.div`
   width: 50%;
   height: 100%;
+
+  @media screen and (max-width: 960px) {
+    width: 100%;
+  }
 `;
 const Header = styled.h2`
   color: ${({ theme }) => theme.projects};
   font-size: ${({ theme }) => theme.fontSizes.XL};
   margin: 0 0 30px 0;
+  text-align: center;
+
+  @media screen and (max-width: 960px) {
+  }
 `;
 
 const Description = styled.div`
@@ -49,16 +80,35 @@ const Description = styled.div`
 const Screenshot = styled.img`
   position: absolute;
   right: 0;
-  display: flex;
-  width: 40%;
-  height: 100%;
-  margin-right: 30px;
-  margin-left: 20px;
-  align-self: center;
-  object-fit: contain;
+  bottom: 0;
+  width: 30%;
+  height: 45%;
+  bottom: 0;
+  margin: auto 30px 130px 20px;
   transition: transform 0.8s;
   :hover {
     transform: scale(1.8) translateX(-150px);
+  }
+
+  @media screen and (max-width: 960px) {
+    height: 30%;
+    left: 0;
+    margin: 0 auto;
+    min-width: 250px;
+    bottom: 130px;
+
+    :hover {
+      transform: scale(1.8) translateY(-40px);
+    }
+  }
+
+  @media screen and (max-width: 560px) {
+    bottom: 170px;
+    height: 25%;
+
+    :hover {
+      transform: scale(1.4) translateY(-20px);
+    }
   }
 `;
 
@@ -92,6 +142,14 @@ const OutsideLink = styled.a`
 
   &:hover span {
     color: ${({ theme }) => theme.orange};
+  }
+
+  @media screen and (max-width: 960px) {
+    margin: 0 30px;
+  }
+
+  @media screen and (max-width: 560px) {
+    margin: 0 15px;
   }
 `;
 
