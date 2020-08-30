@@ -3,16 +3,34 @@ import styled from "styled-components";
 import gsap from "gsap";
 
 const SvgImage = styled.svg`
-  display: flex;
-  justify-self: flex-end;
-  align-self: flex-end;
-  width: 440px;
-  margin-left: 25%;
-  margin-right: 80px;
-  margin-bottom: -40px;
+  width: 380px;
+  position: absolute;
+  right: 6vw;
+  bottom: 50px;
 
+  @media screen and (min-width: 1600px) {
+    width: 440px;
+    right: 8vw;
+  }
   @media screen and (max-width: 1280px) {
-    margin-left: 20%;
+    width: 300px;
+    right: 3vw;
+    bottom: 0;
+  }
+
+  @media screen and (max-width: 960px) {
+    width: 220px;
+    right: 2vw;
+    bottom: -40px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 150px;
+    right: 4vw;
+    bottom: -80px;
+  }
+  @media screen and (max-width: 560px) {
+    display: none;
   }
 `;
 
