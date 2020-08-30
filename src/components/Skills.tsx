@@ -156,21 +156,3 @@ const renderSkill = (skills: SkillInterface) => {
     );
   });
 };
-
-/*{
-      allDatoCmsTechnology {
-        nodes {
-          id
-          logo {
-            alt
-            url
-          }
-          level
-          skills {
-            id
-            skillDescription
-          }
-          technologyName
-        }
-      }
-    } */
