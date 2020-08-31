@@ -9,6 +9,17 @@ const FormWrapper = styled.div`
   min-width: 350px;
   width: 75%;
   height: 720px;
+
+  @media screen and (max-width: 960px) {
+    width: 85%;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 95%;
+  }
+  @media screen and (max-width: 560px) {
+    width: 100%;
+  }
 `;
 
 const StyledForm = styled(Form)`
@@ -20,7 +31,7 @@ const StyledForm = styled(Form)`
 `;
 
 const StyledInput = styled.input`
-  min-width: 300px;
+  min-width: 400px;
   width: 60%;
   height: 60px;
   background-color: ${({ theme }) => theme.lightGray};
@@ -61,6 +72,15 @@ const StyledInput = styled.input`
       color: ${({ theme }) => theme.red};
     }
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: ${({ theme }) => theme.fontSizes.S};
+    height: 50px;
+  }
+  @media screen and (max-width: 560px) {
+    min-width: 320px;
+    width: 100%;
+  }
 `;
 
 const InputWrapper = styled.div`
@@ -79,7 +99,7 @@ const TextAreaWrapper = styled(InputWrapper)`
 `;
 
 const TextArea = styled(StyledInput)`
-  height: 80%;
+  height: 80% !important;
   width: 100%;
   display: block;
   padding: 25px 30px;
@@ -132,6 +152,10 @@ const Button = styled.button`
       transition: fill 0.5s;
       fill: ${({ theme }) => theme.turquoise};
     }
+  }
+  @media screen and (max-width: 560px) {
+    width: 150px;
+    height: 50px;
   }
 `;
 interface ErrorProps {
