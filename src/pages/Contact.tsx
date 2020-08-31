@@ -16,13 +16,18 @@ const Header = styled(TitleHeader)`
   }
 `;
 
-const StyledHeaderWrapper = styled(HeaderWrapper)``;
-
 const ContactFormSection = styled.section`
   width: 100%;
   padding: 65px ${({ theme }) => theme.mainPadding};
   display: flex;
   justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    padding: 40px 50px;
+  }
+  @media screen and (max-width: 560px) {
+    padding: 30px;
+  }
 `;
 
 const ContactPage = () => {
@@ -32,11 +37,11 @@ const ContactPage = () => {
       <SEO title="Contact" />
       <TopWrapper>
         <>
-          <StyledHeaderWrapper imageUrl={contact_background}>
+          <HeaderWrapper imageUrl={contact_background}>
             <Header>
               Contact<span>me</span>
             </Header>
-          </StyledHeaderWrapper>
+          </HeaderWrapper>
           <AnimatedEnvelope />
         </>
       </TopWrapper>
@@ -48,19 +53,3 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
-
-/*const Header = styled.h1`
-  font-size: ${({ theme }) => theme.fontSizes.XL};
-  color: ${({ theme }) => theme.veryLightBlue};
-  margin-bottom: 55px;
-  span {
-    color: ${({ theme }) => theme.orange};
-    margin-left: 10px;
-  }
-`;  
-const StyledHeaderWrapper = styled(HeaderWrapper)`
-  width: 350px;
-  justify-content: flex-start;
-  background-position-y: 25px;
-`;
-*/
