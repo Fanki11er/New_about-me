@@ -6,22 +6,17 @@ import useBackgroundImage from "../Hooks/useBackgroundImage";
 import HeaderWrapper from "../components/HeaderWrapper";
 import AnimatedEnvelope from "../components/AnimatedEnvelope";
 import ContactForm from "../components/ContactForm";
+import TitleHeader from "../components/TitleHeader";
 
-const Header = styled.h1`
-  font-size: ${({ theme }) => theme.fontSizes.XL};
-  color: ${({ theme }) => theme.veryLightBlue};
+const Header = styled(TitleHeader)`
   margin-bottom: 55px;
   span {
-    color: ${({ theme }) => theme.orange};
     margin-left: 10px;
+    margin-right: 0;
   }
 `;
 
-const StyledHeaderWrapper = styled(HeaderWrapper)`
-  width: 350px;
-  justify-content: flex-start;
-  background-position-y: 25px;
-`;
+const StyledHeaderWrapper = styled(HeaderWrapper)``;
 
 const ContactFormSection = styled.section`
   width: 100%;
@@ -53,3 +48,19 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+
+/*const Header = styled.h1`
+  font-size: ${({ theme }) => theme.fontSizes.XL};
+  color: ${({ theme }) => theme.veryLightBlue};
+  margin-bottom: 55px;
+  span {
+    color: ${({ theme }) => theme.orange};
+    margin-left: 10px;
+  }
+`;  
+const StyledHeaderWrapper = styled(HeaderWrapper)`
+  width: 350px;
+  justify-content: flex-start;
+  background-position-y: 25px;
+`;
+*/
