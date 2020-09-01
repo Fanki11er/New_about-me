@@ -55,7 +55,10 @@ const AboutContent = styled.p`
 
   @media screen and (min-width: 1600px) {
     font-size: ${({ theme }) => theme.fontSizes.L};
-    line-height: 35px;
+    line-height: 40px;
+  }
+  @media screen and (max-width: 768px) {
+    margin: 0 0 20px 0;
   }
 `;
 const AdditionalSkillsSection = styled.section`
@@ -77,6 +80,7 @@ const AdditionalSkillWrapper = styled.article`
   @media screen and (min-width: 1600px) {
     font-size: ${({ theme }) => theme.fontSizes.L};
     min-height: 90px;
+    margin: 5px auto 50px auto;
   }
 `;
 
@@ -167,26 +171,3 @@ const renderAdditionalSkills = (
     );
   });
 };
-
-/*
- @media screen and (min-width: 1600px) {
-    margin: 0 12vw 80px 0;
-    width: 350px;
-  }
-  @media screen and (max-width: 1280px) {
-    margin: 0 6vw 35px 0;
-    width: 280px;
-  }
-
-  @media screen and (max-width: 960px) {
-    width: 200px;
-    margin: 0 8vw 35px 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    width: 150px;
-    margin: 0 6vw 30px 0;
-  }
-  @media screen and (max-width: 560px) {
-    display: none;
-  } */
