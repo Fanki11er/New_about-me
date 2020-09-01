@@ -9,6 +9,9 @@ import TitleHeader from "../components/TitleHeader";
 
 const StyledHeader = styled(TitleHeader)`
   margin-left: 50px;
+  span {
+    margin-left: 10px;
+  }
 `;
 
 const PersonImage = styled.img`
