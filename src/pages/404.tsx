@@ -4,20 +4,13 @@ import SEO from "../components/seo";
 import HeaderWrapper from "../components/HeaderWrapper";
 import TopWrapper from "../components/TopWrapper";
 import useBackgroundImage from "../Hooks/useBackgroundImage";
-const Header = styled.h1`
-  font-size: ${({ theme }) => theme.fontSizes.XL};
-  color: ${({ theme }) => theme.veryLightBlue};
-  margin-bottom: 50px;
-  span {
-    color: ${({ theme }) => theme.orange};
-    margin: 0 10px;
-  }
-`;
+import TitleHeader from "../components/TitleHeader";
 
 const StyledHeaderWrapper = styled(HeaderWrapper)`
-  width: 400px;
-  justify-content: flex-start;
   margin-left: 130px;
+  span {
+    margin: 0 10px;
+  }
 `;
 
 const NotFoundImage = styled.img`
@@ -43,9 +36,9 @@ const NotFoundPage = () => {
       <TopWrapper>
         <>
           <StyledHeaderWrapper imageUrl={not_found}>
-            <Header>
+            <TitleHeader>
               Page <span>not</span> found
-            </Header>
+            </TitleHeader>
           </StyledHeaderWrapper>
           <NotFoundImage src={o4o_image} alt={"404 image"} />
         </>
