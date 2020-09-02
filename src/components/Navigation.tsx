@@ -8,6 +8,7 @@ import { Git } from "@styled-icons/boxicons-logos";
 import { Linkedin } from "@styled-icons/fa-brands";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import { PageColorsContext } from "../Providers/PageColorsProvider";
+import MobileMenuButton from "./MobileMenuButton";
 
 interface MenuElementProps {
   linkToPage: string;
@@ -200,6 +201,7 @@ const Navigation = () => {
           <Linkedin className={"icon"} />
         </MenuElement>
       </NavigationList>
+      <MobileMenuButton />
     </NavigationWrapper>
   );
 };
