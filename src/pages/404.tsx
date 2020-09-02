@@ -43,6 +43,11 @@ const NotFoundImage = styled.img`
   }
 `;
 
+const Placeholder = styled.div`
+  width: 100%;
+  height: 60vh;
+`;
+
 const NotFoundPage = () => {
   const { not_found, o4o_image } = useBackgroundImage();
   return (
@@ -58,6 +63,7 @@ const NotFoundPage = () => {
           <NotFoundImage src={o4o_image} alt={"404 image"} />
         </>
       </TopWrapper>
+      <Placeholder />
     </>
   );
 };
