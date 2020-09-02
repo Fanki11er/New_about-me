@@ -5,36 +5,42 @@ import TopWrapper from "../components/TopWrapper";
 import useBackgroundImage from "../Hooks/useBackgroundImage";
 import HeaderWrapper from "../components/HeaderWrapper";
 import AboutSection from "../components/AboutSection";
+import TitleHeader from "../components/TitleHeader";
 
-const Header = styled.h1`
-  font-size: ${({ theme }) => theme.fontSizes.XL};
-  color: ${({ theme }) => theme.veryLightBlue};
-  margin-bottom: 35px;
-  margin-left: 80px;
+const StyledHeader = styled(TitleHeader)`
+  margin-left: 50px;
   span {
-    color: ${({ theme }) => theme.orange};
     margin-left: 10px;
   }
 `;
 
-const StyledHeaderWrapper = styled(HeaderWrapper)`
-  width: 400px;
-  justify-content: flex-start;
-  margin-left: 150px;
-`;
-
 const PersonImage = styled.img`
-  display: flex;
-  justify-self: flex-end;
-  align-self: flex-end;
-  width: 300px;
-  margin-left: 30%;
-  margin-right: 80px;
-  margin-bottom: 75px;
+  position: absolute;
+  width: 320px;
+  right: 0;
+  bottom: 0;
+  margin: 0 8vw 35px 0;
 
+  @media screen and (min-width: 1600px) {
+    margin: 0 12vw 80px 0;
+    width: 350px;
+  }
   @media screen and (max-width: 1280px) {
-    margin-left: 28%;
-    margin-bottom: 65px;
+    margin: 0 6vw 35px 0;
+    width: 280px;
+  }
+
+  @media screen and (max-width: 960px) {
+    width: 200px;
+    margin: 0 8vw 35px 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 150px;
+    margin: 0 6vw 30px 0;
+  }
+  @media screen and (max-width: 560px) {
+    display: none;
   }
 `;
 const AboutPage = () => {
@@ -44,11 +50,11 @@ const AboutPage = () => {
       <SEO title="About" />
       <TopWrapper>
         <>
-          <StyledHeaderWrapper imageUrl={about_background}>
-            <Header>
+          <HeaderWrapper imageUrl={about_background}>
+            <StyledHeader>
               About<span>me</span>
-            </Header>
-          </StyledHeaderWrapper>
+            </StyledHeader>
+          </HeaderWrapper>
           <PersonImage src={person} alt={"Standing person"} />
         </>
       </TopWrapper>

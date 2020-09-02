@@ -3,18 +3,33 @@ import styled from "styled-components";
 import gsap from "gsap";
 
 const SvgImage = styled.svg`
-  display: flex;
-  justify-self: flex-end;
-  align-self: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   width: 200px;
-  margin-left: 38%;
-  margin-right: 30px;
-  margin-bottom: 55px;
   opacity: 0;
+  margin: 0 15vw 40px 0;
 
+  @media screen and (min-width: 1600px) {
+    margin: 0 12vw 80px 0;
+    width: 250px;
+  }
   @media screen and (max-width: 1280px) {
-    margin-left: 32%;
-    margin-bottom: 15px;
+    margin: 0 12vw 40px 0;
+    width: 180px;
+  }
+
+  @media screen and (max-width: 960px) {
+    width: 150px;
+    margin: 0 12vw 0 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 120px;
+    margin: 0 12vw -40px 0;
+  }
+  @media screen and (max-width: 560px) {
+    display: none;
   }
 `;
 

@@ -6,21 +6,14 @@ import useBackgroundImage from "../Hooks/useBackgroundImage";
 import HeaderWrapper from "../components/HeaderWrapper";
 import AnimatedEnvelope from "../components/AnimatedEnvelope";
 import ContactForm from "../components/ContactForm";
+import TitleHeader from "../components/TitleHeader";
 
-const Header = styled.h1`
-  font-size: ${({ theme }) => theme.fontSizes.XL};
-  color: ${({ theme }) => theme.veryLightBlue};
+const Header = styled(TitleHeader)`
   margin-bottom: 55px;
   span {
-    color: ${({ theme }) => theme.orange};
     margin-left: 10px;
+    margin-right: 0;
   }
-`;
-
-const StyledHeaderWrapper = styled(HeaderWrapper)`
-  width: 350px;
-  justify-content: flex-start;
-  background-position-y: 25px;
 `;
 
 const ContactFormSection = styled.section`
@@ -28,6 +21,13 @@ const ContactFormSection = styled.section`
   padding: 65px ${({ theme }) => theme.mainPadding};
   display: flex;
   justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    padding: 40px 50px;
+  }
+  @media screen and (max-width: 560px) {
+    padding: 30px;
+  }
 `;
 
 const ContactPage = () => {
@@ -37,11 +37,11 @@ const ContactPage = () => {
       <SEO title="Contact" />
       <TopWrapper>
         <>
-          <StyledHeaderWrapper imageUrl={contact_background}>
+          <HeaderWrapper imageUrl={contact_background}>
             <Header>
               Contact<span>me</span>
             </Header>
-          </StyledHeaderWrapper>
+          </HeaderWrapper>
           <AnimatedEnvelope />
         </>
       </TopWrapper>

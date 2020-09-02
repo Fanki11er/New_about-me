@@ -1,21 +1,11 @@
 import React from "react";
-import styled from "styled-components";
 import SEO from "../components/seo";
 import TopWrapper from "../components/TopWrapper";
 import useBackgroundImage from "../Hooks/useBackgroundImage";
 import ProjectsAnimation from "../components/ProjectsAnimation";
 import ProjectsSection from "../components/ProjectsSection";
 import HeaderWrapper from "../components/HeaderWrapper";
-
-const Header = styled.h1`
-  font-size: ${({ theme }) => theme.fontSizes.XL};
-  color: ${({ theme }) => theme.veryLightBlue};
-
-  span {
-    color: ${({ theme }) => theme.orange};
-    margin-right: 10px;
-  }
-`;
+import TitleHeader from "../components/TitleHeader";
 
 const ProjectsPage = () => {
   const { projects_background } = useBackgroundImage();
@@ -25,9 +15,9 @@ const ProjectsPage = () => {
       <TopWrapper>
         <>
           <HeaderWrapper imageUrl={projects_background}>
-            <Header>
+            <TitleHeader>
               <span>My</span> Projects
-            </Header>
+            </TitleHeader>
           </HeaderWrapper>
           <ProjectsAnimation />
         </>
