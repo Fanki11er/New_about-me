@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const ButtonIcon = styled.svg`
   position: absolute;
-  right: -1px;
+  right: -10px;
   top: -7px;
   display: none;
   width: 90px;
@@ -16,12 +16,18 @@ const ButtonIcon = styled.svg`
 const MobileMenuButton = () => {
   return (
     <ButtonIcon width="129" height="92" viewBox="0 0 129 92">
+      <defs>
+        <linearGradient id="MenuButton" x1="0.5" y1="0.881" x2="0.5">
+          <stop offset="0" stopColor="#5d8fcc" />
+          <stop offset="1" stopColor="#41ecc5" />
+        </linearGradient>
+      </defs>
       <g id="MobileMenuButton" transform="translate(-233 -27)">
         <g
           id="Border"
           transform="translate(233 27)"
           fill="none"
-          stroke="#4FC0C8"
+          stroke="#5d8fcc"
           strokeWidth="2"
         >
           <path
@@ -37,7 +43,7 @@ const MobileMenuButton = () => {
           id="Arrow"
           d="M21.215,3.384a5.969,5.969,0,0,1,10.76,0L52.259,40.647c2.56,4.7-.462,10.733-5.38,10.733H6.311c-4.918,0-7.94-6.03-5.38-10.733Z"
           transform="translate(272.055 99.596) rotate(-90)"
-          fill="#4FC0C8"
+          fill="url(#MenuButton)"
         />
       </g>
     </ButtonIcon>
