@@ -28,7 +28,13 @@ const Wrapper = styled.ul`
   }
 
   @media screen and (max-width: 560px) {
-    visibility: hidden;
+    &.hide {
+      display: none;
+    }
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 120px 0 100px 0;
   }
 `;
 
@@ -86,6 +92,11 @@ const ListElement = styled.li`
     transform: scale(0.7);
     margin-left: -25px;
   }
+
+  @media screen and (max-width: 560px) {
+    max-width: 200px;
+    transform: scale(1.2);
+  }
 `;
 const MenuLabel = styled.span`
   display: flex;
@@ -95,9 +106,14 @@ const MenuLabel = styled.span`
   align-items: center;
 `;
 
-const NavigationList = () => {
+interface MobileHide {
+  hideOnMobile?: boolean;
+}
+
+const NavigationList = (props: MobileHide) => {
+  const { hideOnMobile } = props;
   return (
-    <Wrapper>
+    <Wrapper className={hideOnMobile ? "hide" : undefined}>
       <MenuElement linkToPage={"/"} label={"Home"}>
         <Home className={"icon"} />
       </MenuElement>

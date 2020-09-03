@@ -4,10 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { PageColorsContext } from "../Providers/PageColorsProvider";
 import MobileMenuButton from "./MobileMenuButton";
 import NavigationList from "./NavigationList";
-
-interface Color {
-  color: string;
-}
+import { Color } from "../utils/interfaces";
 
 const NavigationWrapper = styled.nav`
   position: fixed;
@@ -70,7 +67,7 @@ const Navigation = () => {
   return (
     <NavigationWrapper color={currentColor}>
       <Logo src={logoUrl} alt={"Logo"} />
-      <NavigationList />
+      <NavigationList hideOnMobile={true} />
       <MobileMenuButton />
     </NavigationWrapper>
   );

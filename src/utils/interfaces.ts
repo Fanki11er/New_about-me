@@ -11,3 +11,7 @@ export interface MenuElementProps {
   newWindow?: boolean;
   externalLink?: boolean;
 }
+
+export interface Color {
+  color: string;
+}
