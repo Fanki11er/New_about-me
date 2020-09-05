@@ -15,3 +15,10 @@ export interface MenuElementProps {
 export interface Color {
   color: string;
 }
+
+export interface Clickable {
+  onClick: Function;
+}
+export interface Hidable {
+  hide: Function;
+}

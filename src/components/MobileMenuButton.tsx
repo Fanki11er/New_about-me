@@ -1,6 +1,7 @@
 import React, { useContext, useRef } from "react";
 import styled from "styled-components";
 import { MobileNavContext } from "../Providers/MobileNavProvider";
+import { Clickable } from "../utils/interfaces";
 
 const ButtonIcon = styled.svg`
   position: fixed;

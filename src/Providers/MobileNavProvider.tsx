@@ -1,13 +1,6 @@
-import React, { useState, RefObject } from "react";
-interface Clickable {
-  onClick: Function;
-}
-interface Hidable {
-  show: Function;
-}
+import React, { useState } from "react";
+import { RefToButton, RefToMobileNav } from "../utils/types";
 
-type RefToButton = RefObject<any & Clickable> | null;
-type RefToMobileNav = RefObject<any & Hidable> | null;
 export const MobileNavContext = React.createContext({
   isMobileNavOpen: false,
   toggleNavModal: () => {},
