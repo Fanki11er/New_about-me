@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import styled from "styled-components";
 import { MobileNavContext } from "../Providers/MobileNavProvider";
 
@@ -16,13 +16,18 @@ const ButtonIcon = styled.svg`
 `;
 
 const MobileMenuButton = () => {
-  const { toggleNavModal } = useContext(MobileNavContext);
+  const { toggleNavModal, getReferences } = useContext(MobileNavContext);
+  const ref = useRef<SVGSVGElement & Clickable>(null);
+
+  getReferences(ref, null);
+
   return (
     <ButtonIcon
       width="129"
       height="92"
       viewBox="0 0 129 92"
       onClick={toggleNavModal}
+      ref={ref}
     >
       <defs>
         <linearGradient id="MenuButton" x1="0.5" y1="0.881" x2="0.5">
