@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { MobileNavContext } from "../Providers/MobileNavProvider";
 import { Clickable } from "../utils/interfaces";
@@ -19,8 +19,9 @@ const ButtonIcon = styled.svg`
 const MobileMenuButton = () => {
   const { toggleNavModal, getReferences } = useContext(MobileNavContext);
   const ref = useRef<SVGSVGElement & Clickable>(null);
-
-  getReferences(ref, null);
+  useEffect(() => {
+    getReferences(ref, null);
+  }, []);
 
   return (
     <ButtonIcon

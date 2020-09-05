@@ -12,16 +12,24 @@ const NavWrapper = styled.nav`
   right: 0;
   width: 100vw;
   height: 100vh;
-  clip-path: circle(100px at 90% -10%);
-  background-color: ${(props: Color) => props.color};
+  clip-path: circle(
+    ${(props: NavProps) => (!props.isOpen ? "100px" : "1000px")} at 90% -10%
+  );
+  background-color: ${(props: Color & NavProps) => props.color};
   min-width: 360px;
   z-index: 7;
 `;
 
 const MobileNavigation = () => {
   const { currentColor } = useContext(PageColorsContext);
+  const { isMobileNavOpen, getReferences } = useContext(MobileNavContext);
+  const nav = useRef<HTMLUnknownElement>(null);
+  useEffect(() => {
+    getReferences(null, nav);
+  }, []);
+
   return (
-    <NavWrapper color={currentColor}>
+    <NavWrapper color={currentColor} isOpen={isMobileNavOpen} ref={nav}>
       <NavigationList />
     </NavWrapper>
   );
