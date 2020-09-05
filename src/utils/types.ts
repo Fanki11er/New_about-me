@@ -1,5 +1,5 @@
 import { RefObject } from "react";
-import { Clickable, Hidable } from "./interfaces";
+import { Clickable } from "./interfaces";
 
 export type AssetUrl = {
   publicURL: string;

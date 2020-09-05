@@ -19,6 +19,3 @@ export interface Color {
 export interface Clickable {
   onClick: Function;
 }
-export interface Hidable {
-  hide: Function;
-}
