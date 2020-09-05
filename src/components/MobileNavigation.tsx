@@ -21,14 +21,14 @@ const NavWrapper = styled.nav`
 
 const MobileNavigation = () => {
   const { currentColor } = useContext(PageColorsContext);
-  const { getReferences } = useContext(MobileNavContext);
+  const { getReferences, toggleNavModal } = useContext(MobileNavContext);
   const nav = useRef<HTMLUnknownElement>(null);
   useEffect(() => {
     getReferences(null, nav);
   }, []);
 
   return (
-    <NavWrapper color={currentColor} ref={nav}>
+    <NavWrapper color={currentColor} ref={nav} onClick={toggleNavModal}>
       <NavigationList />
     </NavWrapper>
   );
