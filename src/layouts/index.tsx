@@ -8,6 +8,7 @@ import PageColorsProvider from "../Providers/PageColorsProvider";
 import ImagesProvider from "../Providers/ImagesProvider";
 import MobileNavigation from "../components/MobileNavigation";
 import MobileMenuButton from "../components/MobileMenuButton";
+import MobileNavProvider from "../Providers/MobileNavProvider";
 interface Props {
   children: React.ReactChild;
   location: Location;

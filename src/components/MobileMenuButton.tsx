@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { MobileNavContext } from "../Providers/MobileNavProvider";
 
 const ButtonIcon = styled.svg`
   position: fixed;
@@ -15,8 +16,14 @@ const ButtonIcon = styled.svg`
 `;
 
 const MobileMenuButton = () => {
+  const { toggleNavModal } = useContext(MobileNavContext);
   return (
-    <ButtonIcon width="129" height="92" viewBox="0 0 129 92">
+    <ButtonIcon
+      width="129"
+      height="92"
+      viewBox="0 0 129 92"
+      onClick={toggleNavModal}
+    >
       <defs>
         <linearGradient id="MenuButton" x1="0.5" y1="0.881" x2="0.5">
           <stop offset="0" stopColor="#5d8fcc" />
