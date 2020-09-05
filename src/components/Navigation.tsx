@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 import { PageColorsContext } from "../Providers/PageColorsProvider";
-import MobileMenuButton from "./MobileMenuButton";
 import NavigationList from "./NavigationList";
 import { Color } from "../utils/interfaces";
 
@@ -68,7 +67,6 @@ const Navigation = () => {
     <NavigationWrapper color={currentColor}>
       <Logo src={logoUrl} alt={"Logo"} />
       <NavigationList hideOnMobile={true} />
-      <MobileMenuButton />
     </NavigationWrapper>
   );
 };

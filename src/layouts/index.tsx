@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import PageColorsProvider from "../Providers/PageColorsProvider";
 import ImagesProvider from "../Providers/ImagesProvider";
 import MobileNavigation from "../components/MobileNavigation";
+import MobileMenuButton from "../components/MobileMenuButton";
 interface Props {
   children: React.ReactChild;
   location: Location;
@@ -21,6 +22,7 @@ const MainLayout = (props: Props) => {
         <ImagesProvider>
           <>
             <MobileNavigation />
+            <MobileMenuButton />
             <Navigation />
             {children}
             <Footer />
