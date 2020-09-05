@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const ButtonIcon = styled.svg`
-  position: absolute;
+  position: fixed;
   right: -10px;
   top: -7px;
   display: none;
   width: 90px;
+  z-index: 10;
 
   @media screen and (max-width: 560px) {
     display: initial;
