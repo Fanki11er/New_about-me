@@ -36,17 +36,21 @@ const MobileNavProvider = (props: Props) => {
       const buttonRef = refToButton?.current;
       const navigation = refToNavigation?.current;
       const links = navigation.querySelectorAll("li");
+      const arrow = buttonRef.querySelector("#Arrow");
       const tl = gsap.timeline();
+      tl.set(navigation!, { clipPath: "circle(100px at 90% -10%)" });
       tl.set(links!, { opacity: 0 });
+      tl.set(buttonRef, { right: -10 });
+      tl.set(arrow!, {
+        translateX: "272",
+        rotate: -90,
+        transformOrigin: "center",
+      });
 
-      tl.fromTo(
-        navigation!,
-        { clipPath: "circle(100px at 90% -10%)" },
-        {
-          clipPath: "circle(1000px at 90% -10%)",
-          duration: "1",
-        }
-      )
+      tl.to(navigation!, {
+        clipPath: "circle(1000px at 90% -10%)",
+        duration: "1",
+      })
         .to(
           links,
           {
@@ -60,12 +64,15 @@ const MobileNavProvider = (props: Props) => {
           },
           "=-0.7"
         )
+        .to(buttonRef!, { right: "+=9", duration: 0.5 }, "-=1")
+        .to(arrow!, { translateX: "-=15", duration: 0.5 }, "-=1")
+        .to(arrow!, { rotate: 90, duration: 1 }, "-=0.2")
         .paused(true);
 
       if (isMobileNavOpen) {
         tl.play();
       } else {
-        tl.timeScale(2).reverse(2);
+        tl.timeScale(2).reverse(10);
       }
     }
   }, [isMobileNavOpen]);
