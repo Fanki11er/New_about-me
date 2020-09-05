@@ -17,6 +17,7 @@ const NavWrapper = styled.nav`
   background-color: ${(props: Color) => props.color};
   min-width: 360px;
   z-index: 7;
+  transition: background-color 0.5s;
 `;
 
 const MobileNavigation = () => {

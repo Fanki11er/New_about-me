@@ -72,7 +72,7 @@ const MobileNavProvider = (props: Props) => {
       if (isMobileNavOpen) {
         tl.play();
       } else {
-        tl.timeScale(1.7).reverse(10);
+        tl.timeScale(2).reverse(10);
       }
     }
   }, [isMobileNavOpen]);

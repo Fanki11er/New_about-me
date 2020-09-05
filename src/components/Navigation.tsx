@@ -37,6 +37,7 @@ const NavigationWrapper = styled.nav`
   @media screen and (max-width: 560px) {
     padding: 0 15px;
     height: 80px;
+    transition: background-color 0.5s;
   }
 `;
 
