@@ -21,13 +21,15 @@ const MainLayout = (props: Props) => {
       <GlobalStyle />
       <PageColorsProvider location={location}>
         <ImagesProvider>
-          <>
-            <MobileNavigation />
-            <MobileMenuButton />
-            <Navigation />
-            {children}
-            <Footer />
-          </>
+          <MobileNavProvider>
+            <>
+              <MobileNavigation />
+              <MobileMenuButton />
+              <Navigation />
+              {children}
+              <Footer />
+            </>
+          </MobileNavProvider>
         </ImagesProvider>
       </PageColorsProvider>
     </ThemeProvider>
