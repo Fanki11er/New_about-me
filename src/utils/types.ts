@@ -16,6 +16,7 @@ export type MainPageImages = {
   bulb: string;
   not_found: string;
   o4o_image: string;
+  source: string;
 };
 
 export type SkillType = {

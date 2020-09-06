@@ -15,6 +15,7 @@ export const ImagesContext = React.createContext({
     bulb: "",
     not_found: "",
     o4o_image: "",
+    source: "",
   },
 });
 interface Props {
