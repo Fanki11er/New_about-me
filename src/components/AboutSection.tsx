@@ -85,10 +85,12 @@ const AdditionalSkillWrapper = styled.article`
 `;
 
 const PointerImage = styled.img`
-  width: 35px;
+  min-width: 35px;
+  max-width: 35px;
   margin: 0 20px;
   @media screen and (min-width: 1600px) {
     width: 40px;
+    max-width: 40px;
   }
 `;
 
