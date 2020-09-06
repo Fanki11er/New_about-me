@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 import { ProjectType } from "../utils/types";
+import useBackgroundImage from "../Hooks/useBackgroundImage";
 
 const ProjectsWrapper = styled.section`
   width: 100%;
@@ -35,6 +36,14 @@ const SingleProject = styled.article`
     min-height: 800px;
     width: 100%;
     border-radius: 60px;
+  }
+`;
+
+const SourceWrapper = styled(SingleProject)`
+  min-height: 300px;
+  align-items: center;
+  @media screen and (max-width: 960px) {
+    min-height: 300px;
   }
 `;
 
@@ -153,6 +162,13 @@ const OutsideLink = styled.a`
   }
 `;
 
+const SourceLink = styled(OutsideLink)`
+  width: 220px;
+  span {
+    margin: 0 3px;
+  }
+`;
+
 const CredentialsWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -169,6 +185,10 @@ const CredentialRow = styled.div`
   }
 `;
 
+const SourceImage = styled.img`
+  margin-left: 20px;
+`;
+
 interface ProjectsInterface {
   allDatoCmsProject: {
     nodes: ProjectType[];
@@ -176,6 +196,7 @@ interface ProjectsInterface {
 }
 
 const ProjectsSection = () => {
+  const { source } = useBackgroundImage();
   const {
     allDatoCmsProject: { nodes },
   } = useStaticQuery(graphql`
@@ -200,7 +221,20 @@ const ProjectsSection = () => {
     }
   `) as ProjectsInterface;
 
-  return <ProjectsWrapper>{renderProjectsData(nodes)}</ProjectsWrapper>;
+  return (
+    <ProjectsWrapper>
+      {renderProjectsData(nodes)}
+      <SourceWrapper>
+        <SourceImage src={source} alt={"Page source"} />
+        <SourceLink
+          href={"https://github.com/Fanki11er/New_about-me"}
+          target="_blank"
+        >
+          Check <span>code</span> of this page
+        </SourceLink>
+      </SourceWrapper>
+    </ProjectsWrapper>
+  );
 };
 
 export default ProjectsSection;
