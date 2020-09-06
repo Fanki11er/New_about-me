@@ -1,3 +1,6 @@
+import { RefObject } from "react";
+import { Clickable } from "./interfaces";
+
 export type AssetUrl = {
   publicURL: string;
 };
@@ -57,3 +60,6 @@ export type singleAdditionalSkill = {
 };
 
 export type Status = "Ok" | "Err" | "Submitting" | "Wait";
+
+export type RefToButton = RefObject<any & Clickable> | null;
+export type RefToMobileNav = RefObject<any & HTMLElement> | null;

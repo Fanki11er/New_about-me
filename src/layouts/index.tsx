@@ -6,6 +6,9 @@ import mainTheme from "../assets/styles/mainTheme";
 import Footer from "../components/Footer";
 import PageColorsProvider from "../Providers/PageColorsProvider";
 import ImagesProvider from "../Providers/ImagesProvider";
+import MobileNavigation from "../components/MobileNavigation";
+import MobileMenuButton from "../components/MobileMenuButton";
+import MobileNavProvider from "../Providers/MobileNavProvider";
 interface Props {
   children: React.ReactChild;
   location: Location;
@@ -18,11 +21,15 @@ const MainLayout = (props: Props) => {
       <GlobalStyle />
       <PageColorsProvider location={location}>
         <ImagesProvider>
-          <>
-            <Navigation />
-            {children}
-            <Footer />
-          </>
+          <MobileNavProvider>
+            <>
+              <MobileNavigation />
+              <MobileMenuButton />
+              <Navigation />
+              {children}
+              <Footer />
+            </>
+          </MobileNavProvider>
         </ImagesProvider>
       </PageColorsProvider>
     </ThemeProvider>
