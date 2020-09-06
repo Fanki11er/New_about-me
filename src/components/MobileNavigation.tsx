@@ -18,6 +18,10 @@ const NavWrapper = styled.nav`
   min-width: 360px;
   z-index: 7;
   transition: background-color 0.5s;
+  display: none;
+  @media screen and (max-width: 560px) {
+    display: initial;
+  }
 `;
 
 const MobileNavigation = () => {
