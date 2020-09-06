@@ -19,21 +19,32 @@ const NavWrapper = styled.nav`
   z-index: 7;
   transition: background-color 0.5s;
   display: none;
+
   @media screen and (max-width: 560px) {
-    display: initial;
+    display: flex;
+    &.blocked {
+      pointer-events: none;
+    }
   }
 `;
 
 const MobileNavigation = () => {
   const { currentColor } = useContext(PageColorsContext);
-  const { getReferences, toggleNavModal } = useContext(MobileNavContext);
+  const { getReferences, toggleNavModal, isInProgress } = useContext(
+    MobileNavContext
+  );
   const nav = useRef<HTMLUnknownElement>(null);
   useEffect(() => {
     getReferences(null, nav);
   }, []);
 
   return (
-    <NavWrapper color={currentColor} ref={nav} onClick={toggleNavModal}>
+    <NavWrapper
+      color={currentColor}
+      ref={nav}
+      onClick={() => toggleNavModal()}
+      className={isInProgress ? "blocked" : undefined}
+    >
       <NavigationList />
     </NavWrapper>
   );

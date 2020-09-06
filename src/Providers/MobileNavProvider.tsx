@@ -6,6 +6,7 @@ export const MobileNavContext = React.createContext({
   isMobileNavOpen: false,
   toggleNavModal: () => {},
   getReferences: (button: RefToButton, navigation: RefToMobileNav) => {},
+  isInProgress: false,
   references: {
     MobileNavButton: null,
     MobileNavigation: null,
@@ -21,6 +22,7 @@ const MobileNavProvider = (props: Props) => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [refToButton, setRefToButton] = useState<RefToButton>(null);
   const [refToNavigation, setRefToNavigation] = useState<RefToMobileNav>(null);
+  const [isInProgress, setIsInProgress] = useState(false);
 
   const toggleNavModal = () => {
     setIsMobileNavOpen(!isMobileNavOpen);
@@ -70,7 +72,10 @@ const MobileNavProvider = (props: Props) => {
         .paused(true);
 
       if (isMobileNavOpen) {
-        tl.play();
+        setIsInProgress(true);
+        tl.play().then(() => {
+          setIsInProgress(false);
+        });
       } else {
         tl.timeScale(2).reverse(10);
       }
@@ -81,6 +86,7 @@ const MobileNavProvider = (props: Props) => {
     isMobileNavOpen,
     toggleNavModal,
     getReferences,
+    isInProgress,
     references: {
       MobileNavButton: refToButton?.current,
       MobileNavigation: refToNavigation?.current,

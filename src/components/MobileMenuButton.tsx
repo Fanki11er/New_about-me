@@ -17,7 +17,9 @@ const ButtonIcon = styled.svg`
 `;
 
 const MobileMenuButton = () => {
-  const { toggleNavModal, getReferences } = useContext(MobileNavContext);
+  const { toggleNavModal, getReferences, isInProgress } = useContext(
+    MobileNavContext
+  );
   const ref = useRef<SVGSVGElement & Clickable>(null);
   useEffect(() => {
     getReferences(ref, null);
@@ -28,7 +30,7 @@ const MobileMenuButton = () => {
       width="129"
       height="92"
       viewBox="0 0 129 92"
-      onClick={toggleNavModal}
+      onClick={() => !isInProgress && toggleNavModal()}
       ref={ref}
     >
       <defs>
