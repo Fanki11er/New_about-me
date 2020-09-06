@@ -68,7 +68,7 @@ const MobileNavProvider = (props: Props) => {
         )
         .to(buttonRef!, { right: "+=9", duration: 0.5 }, "-=1")
         .to(arrow!, { translateX: "-=15", duration: 0.5 }, "-=1")
-        .to(arrow!, { rotate: 90, duration: 1 }, "-=0.2")
+        .to(arrow!, { rotate: 90, duration: 0.5 }, "-=0.6")
         .paused(true);
 
       if (isMobileNavOpen) {
@@ -77,7 +77,7 @@ const MobileNavProvider = (props: Props) => {
           setIsInProgress(false);
         });
       } else {
-        tl.timeScale(2).reverse(10);
+        tl.timeScale(1.5).reverse(10);
       }
     }
   }, [isMobileNavOpen]);
