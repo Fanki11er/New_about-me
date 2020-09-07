@@ -102,11 +102,15 @@ const CookieImage = styled.img`
 
 const CookiesInfoModal = () => {
   const { cookie } = useBackgroundImage();
-  const [cookies, setCookie] = useCookies(["infoRed"]);
+  const [cookies, setCookie] = useCookies([
+    "infoRed",
+    "gatsby-gdpr-google-analytics",
+  ]);
   const [isInfoRed, setIsInfoRed] = useState(cookies.infoRed);
 
-  const hideCookieInfo = () => {
+  const hideCookieInfo = (userOption: boolean) => {
     setCookie("infoRed", true, { maxAge: 5184000 });
+    setCookie("gatsby-gdpr-google-analytics", userOption);
     setIsInfoRed(true);
   };
   return (
@@ -171,14 +175,14 @@ const CookiesInfoModal = () => {
       <ButtonsWrapper>
         <Button
           onClick={() => {
-            hideCookieInfo();
+            hideCookieInfo(true);
           }}
         >
           I <span>agree</span>
         </Button>
         <Button
           onClick={() => {
-            hideCookieInfo();
+            hideCookieInfo(false);
           }}
         >
           I <span>don't </span>agree

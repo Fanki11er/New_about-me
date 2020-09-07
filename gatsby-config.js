@@ -6,6 +6,16 @@ module.exports = {
     author: `Krzysztof Dziedzic`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: "243525644",
+          cookieName: "gatsby-gdpr-google-analytics",
+          anonymize: true,
+        },
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-layout`,
