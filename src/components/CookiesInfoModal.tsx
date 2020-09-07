@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import useBackgroundImage from "../Hooks/useBackgroundImage";
-//import { useCookies } from 'react-cookie';
+import { useCookies } from "react-cookie";
+import { ModalProps } from "../utils/interfaces";
 
 const CookiesInfoWrapper = styled.div`
   position: fixed;
@@ -19,6 +20,7 @@ const CookiesInfoWrapper = styled.div`
   margin-left: 5%;
   z-index: 100;
   padding: 55px;
+  display: ${(props: ModalProps) => (props.isVisible ? "none" : "flex")};
 `;
 
 const CookieTextWrapper = styled.section`
@@ -100,8 +102,15 @@ const CookieImage = styled.img`
 
 const CookiesInfoModal = () => {
   const { cookie } = useBackgroundImage();
+  const [cookies, setCookie] = useCookies(["infoRed"]);
+  const [isInfoRed, setIsInfoRed] = useState(cookies.infoRed);
+
+  const hideCookieInfo = () => {
+    setCookie("infoRed", true, { maxAge: 5184000 });
+    setIsInfoRed(true);
+  };
   return (
-    <CookiesInfoWrapper>
+    <CookiesInfoWrapper isVisible={isInfoRed}>
       <CookieTextWrapper>
         <CookiesParagraph>
           If you agree, I will use the Analytical cookies of Google Analytics
@@ -160,10 +169,18 @@ const CookiesInfoModal = () => {
         <CookieImage src={cookie} alt={"Cookie"} />
       </CookieTextWrapper>
       <ButtonsWrapper>
-        <Button>
+        <Button
+          onClick={() => {
+            hideCookieInfo();
+          }}
+        >
           I <span>agree</span>
         </Button>
-        <Button>
+        <Button
+          onClick={() => {
+            hideCookieInfo();
+          }}
+        >
           I <span>don't </span>agree
         </Button>
       </ButtonsWrapper>
@@ -172,15 +189,3 @@ const CookiesInfoModal = () => {
 };
 
 export default CookiesInfoModal;
-
-/* const [cookies, setCookie] = useCookies(['infoSaw']);
-  const [cookiesInfoRed, setCookiesIfoRed] = useState(cookies.infoSaw);
-  useEffect(() => {
-    initGA();
-    pageView();
-  }, []);
-
-  const hideCookieInfo = () => {
-    setCookie('infoSaw', true, { maxAge: 5184000 });
-    setCookiesIfoRed(true); 
-  }; */
