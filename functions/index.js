@@ -4,11 +4,12 @@ const sgMail = require("@sendgrid/mail");
 
 exports.sendEmail = functions.https.onRequest((request, response) => {
   sgMail.setApiKey(functions.config().sendgrid.key);
+  const withEmail = `( ${request.body.email} )`;
   const msg = {
     to: "dziedzic.kdz@gmail.com",
     from: "dziedzic.k@hotmail.com",
     subject: "Message from contact form",
-    text: `From ${request.body.name} (${request.body.email}) 
+    text: `From ${request.body.name} ${request.body.email ? withEmail : " "} 
     Message: ${request.body.message}`,
   };
 
