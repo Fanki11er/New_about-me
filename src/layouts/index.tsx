@@ -9,6 +9,7 @@ import ImagesProvider from "../Providers/ImagesProvider";
 import MobileNavigation from "../components/MobileNavigation";
 import MobileMenuButton from "../components/MobileMenuButton";
 import MobileNavProvider from "../Providers/MobileNavProvider";
+import CookiesInfoModal from "../components/CookiesInfoModal";
 interface Props {
   children: React.ReactChild;
   location: Location;
@@ -27,6 +28,7 @@ const MainLayout = (props: Props) => {
               <MobileMenuButton />
               <Navigation />
               {children}
+              <CookiesInfoModal />
               <Footer />
             </>
           </MobileNavProvider>
