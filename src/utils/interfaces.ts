@@ -19,3 +19,7 @@ export interface Color {
 export interface Clickable {
   onClick: Function;
 }
+
+export interface ModalProps {
+  isVisible: boolean;
+}

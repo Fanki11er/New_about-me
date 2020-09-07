@@ -17,6 +17,7 @@ export type MainPageImages = {
   not_found: string;
   o4o_image: string;
   source: string;
+  cookie: string;
 };
 
 export type SkillType = {
