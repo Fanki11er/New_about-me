@@ -1,12 +1,13 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useContext } from "react";
 import styled from "styled-components";
 import SEO from "../components/seo";
-import { Link } from "gatsby";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Skills from "../components/Skills";
 import AnimatedCodeLine from "../components/AnimatedCodeLine";
 import gsap from "gsap";
 import TopWrapper from "../components/TopWrapper";
 import useBackgroundImage from "../Hooks/useBackgroundImage";
+import { PageColorsContext } from "../Providers/PageColorsProvider";
 
 const TitleWrapper = styled.div`
   position: relative;
@@ -140,7 +141,7 @@ const MainHeader = styled.h1`
   }
 `;
 
-const ProjectsButton = styled(Link)`
+const ProjectsButton = styled(AniLink)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -192,6 +193,7 @@ const ProjectsButton = styled(Link)`
 
 const IndexPage = () => {
   const { hero } = useBackgroundImage();
+  const { currentColor } = useContext(PageColorsContext);
 
   const headerWrapper = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -235,7 +237,14 @@ const IndexPage = () => {
 
               <AnimatedCodeLine />
             </Title>
-            <ProjectsButton to={"/Projects"}>Check my projects</ProjectsButton>
+            <ProjectsButton
+              bg={currentColor}
+              cover
+              duration={1.5}
+              to={"/Projects"}
+            >
+              Check my projects
+            </ProjectsButton>
           </TitleWrapper>
           <HeroImage src={hero} alt={"Hero image"} />
         </>
