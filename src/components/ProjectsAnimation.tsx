@@ -97,7 +97,7 @@ const ProjectsAnimation = () => {
 
   useEffect(() => {
     animateProjects(svgRef);
-  });
+  }, []);
   return (
     <SvgImage
       width="574.62"

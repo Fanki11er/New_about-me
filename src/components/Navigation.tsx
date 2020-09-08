@@ -20,6 +20,7 @@ const NavigationWrapper = styled.nav`
   font-weight: 700;
   z-index: 8;
   color: ${({ theme }) => theme.gray};
+  transition: background-color 0.2s;
 
   @media screen and (min-width: 1600px) {
     height: 120px;

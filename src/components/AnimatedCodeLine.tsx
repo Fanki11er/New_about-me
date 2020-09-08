@@ -72,7 +72,7 @@ const AnimatedCodeLine = () => {
         "-=3"
       )
       .to(line2, { duration: "0.8", autoAlpha: 0 }, "-=2");
-  });
+  }, []);
 
   return (
     <Svg

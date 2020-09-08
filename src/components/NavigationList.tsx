@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { Home2 as Home } from "@styled-icons/remix-fill";
 import { PageMultiple as Projects } from "@styled-icons/foundation";
 import { FilePersonFill as About } from "@styled-icons/bootstrap";
@@ -8,6 +8,7 @@ import { Envelope } from "@styled-icons/boxicons-solid";
 import { Git } from "@styled-icons/boxicons-logos";
 import { Linkedin } from "@styled-icons/fa-brands";
 import { MenuElementProps } from "../utils/interfaces";
+import { PageColorsContext } from "../Providers/PageColorsProvider";
 
 const Wrapper = styled.ul`
   display: flex;
@@ -152,17 +153,21 @@ export default NavigationList;
 
 const MenuElement = (props: MenuElementProps) => {
   const { linkToPage, label, children, newWindow, externalLink } = props;
+  const { currentColor } = useContext(PageColorsContext);
   return (
     <ListElement>
       {!externalLink && (
-        <Link
+        <AniLink
+          cover
+          bg={currentColor}
           to={linkToPage}
           activeClassName={"isActive"}
           target={newWindow ? "_blank" : ""}
+          duration={1.5}
         >
           {children}
           <MenuLabel>{label}</MenuLabel>
-        </Link>
+        </AniLink>
       )}
       {externalLink && (
         <a href={linkToPage} target={newWindow ? "_blank" : ""}>
