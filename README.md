@@ -3,7 +3,7 @@
 <br/>
 <h2> About me </h2>
 
-### Krzysztof Dziedzic personal webpage
+### Krzysztof Dziedzic's personal webpage
 
 <br/>
 <br/>
