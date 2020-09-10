@@ -2,7 +2,7 @@ require("dotenv").config();
 module.exports = {
   siteMetadata: {
     title: `Dziedzic-about-me`,
-    description: `This is a business card page.`,
+    description: `This is the personal page of Krzysztof Dziedzic.`,
     author: `Krzysztof Dziedzic`,
   },
   plugins: [
