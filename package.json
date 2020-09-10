@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "About me",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "This is the personal page of Krzysztof Dziedzic.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Krzysztof Dziedzic",
   "dependencies": {
     "@sendgrid/mail": "^7.2.3",
     "@types/styled-components": "^5.1.1",
