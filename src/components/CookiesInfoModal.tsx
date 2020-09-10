@@ -21,6 +21,17 @@ const CookiesInfoWrapper = styled.div`
   z-index: 100;
   padding: 55px;
   display: ${(props: ModalProps) => (props.isVisible ? "none" : "flex")};
+  opacity: 0;
+  animation-name: show;
+  animation-duration: 1.5s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+
+  @keyframes show {
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 const CookieTextWrapper = styled.section`
