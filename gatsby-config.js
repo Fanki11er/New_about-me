@@ -66,6 +66,21 @@ module.exports = {
         apiToken: process.env.API_DATO_CMS,
       },
     },
+    {
+      resolve: "gatsby-plugin-firebase",
+      options: {
+        credentials: {
+          apiKey: process.env.API_FIREBASE,
+          authDomain: "dziedzic-about-me.firebaseapp.com",
+          databaseURL: "https://dziedzic-about-me.firebaseio.com",
+          projectId: "dziedzic-about-me",
+          storageBucket: "dziedzic-about-me.appspot.com",
+          messagingSenderId: "148555362418",
+          appId: "1:148555362418:web:4dfa9a5112a41cc4e112eb",
+          measurementId: "G-7NR2QMLHJ0",
+        },
+      },
+    },
 
     {
       resolve: `gatsby-plugin-manifest`,
