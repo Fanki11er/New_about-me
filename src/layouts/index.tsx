@@ -2,6 +2,7 @@ import React from "react";
 import GlobalStyle from "../assets/styles/GlobalStyle";
 import Navigation from "../components/Navigation";
 import { ThemeProvider } from "styled-components";
+import { CookiesProvider } from "react-cookie";
 import mainTheme from "../assets/styles/mainTheme";
 import Footer from "../components/Footer";
 import PageColorsProvider from "../Providers/PageColorsProvider";
@@ -23,14 +24,14 @@ const MainLayout = (props: Props) => {
       <PageColorsProvider location={location}>
         <ImagesProvider>
           <MobileNavProvider>
-            <>
+            <CookiesProvider>
               <MobileNavigation />
               <MobileMenuButton />
               <Navigation />
               {children}
               <CookiesInfoModal />
               <Footer />
-            </>
+            </CookiesProvider>
           </MobileNavProvider>
         </ImagesProvider>
       </PageColorsProvider>

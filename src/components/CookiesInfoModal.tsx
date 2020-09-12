@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import useBackgroundImage from "../Hooks/useBackgroundImage";
 import { useCookies } from "react-cookie";
@@ -122,9 +122,10 @@ const CookiesInfoModal = () => {
     "infoRed",
     "gatsby-gdpr-google-analytics",
   ]);
-  const [isInfoRed, setIsInfoRed] = useState<boolean>(
-    cookies.infoRed ? true : false
-  );
+  const [isInfoRed, setIsInfoRed] = useState<boolean>(false);
+  useEffect(() => {
+    setIsInfoRed(cookies.infoRed);
+  }, []);
 
   const hideCookieInfo = (userOption: boolean) => {
     setCookie("infoRed", true, { maxAge: 5184000 });
