@@ -153,6 +153,10 @@ const Button = styled.button`
       fill: ${({ theme }) => theme.turquoise};
     }
   }
+
+  &.disabled {
+    pointer-events: none;
+  }
   @media screen and (max-width: 560px) {
     width: 150px;
     height: 50px;
@@ -187,6 +191,7 @@ const ContactForm = () => {
 
   const [status, setStatus] = useState<Status>("Wait");
   const [isErrorStatus, setIsErrorStatus] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const validate = (values: MyFormValues) => {
     const errors = {} as FormikErrors<MyFormValues>;
@@ -214,6 +219,7 @@ const ContactForm = () => {
             .then(() => {
               setStatus("Ok");
               setSubmitting(false);
+              setIsSubmitted(true);
               resetForm();
             })
             .catch(err => {
@@ -282,7 +288,11 @@ const ContactForm = () => {
                 </TextAreaWrapper>
               )}
             </Field>
-            <Button type={"submit"} disabled={isSubmitting}>
+            <Button
+              type={"submit"}
+              disabled={isSubmitting || isSubmitted}
+              className={isSubmitted || isSubmitting ? "disabled" : undefined}
+            >
               <AnimatedSubmitButton status={status} />
             </Button>
             <SendError errorStatus={isErrorStatus}>Please try again</SendError>

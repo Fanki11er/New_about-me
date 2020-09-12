@@ -164,6 +164,7 @@ const MenuElement = (props: MenuElementProps) => {
           activeClassName={"isActive"}
           target={newWindow ? "_blank" : ""}
           duration={1.5}
+          direction={"right"}
         >
           {children}
           <MenuLabel>{label}</MenuLabel>

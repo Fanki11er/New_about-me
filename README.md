@@ -31,3 +31,4 @@ _The second reason was the desire to learn how to build a page in Gatsby on an e
 - _Firebase hosting_
 - _Firebase Functions_
 - _Google analytics_
+- _GSAP_

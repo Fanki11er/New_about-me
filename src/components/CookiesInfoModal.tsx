@@ -32,6 +32,11 @@ const CookiesInfoWrapper = styled.div`
       opacity: 1;
     }
   }
+
+  @media screen and (max-width: 560px) {
+    padding: 35px;
+    border-radius: 45px;
+  }
 `;
 
 const CookieTextWrapper = styled.section`
@@ -77,7 +82,7 @@ const Button = styled.button`
   }
 
   @media screen and (max-width: 560px) {
-    transform: scale(0.8);
+    margin: 10px;
   }
 
   span {
@@ -117,7 +122,9 @@ const CookiesInfoModal = () => {
     "infoRed",
     "gatsby-gdpr-google-analytics",
   ]);
-  const [isInfoRed, setIsInfoRed] = useState(cookies.infoRed);
+  const [isInfoRed, setIsInfoRed] = useState<boolean>(
+    cookies.infoRed ? true : false
+  );
 
   const hideCookieInfo = (userOption: boolean) => {
     setCookie("infoRed", true, { maxAge: 5184000 });

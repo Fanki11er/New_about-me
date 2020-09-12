@@ -220,7 +220,7 @@ const IndexPage = () => {
       },
       "-=1.5"
     );
-  });
+  }, []);
   return (
     <>
       <SEO title="Home" />
@@ -255,10 +255,3 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
-
-/*  @media screen and (max-width: 560px) {
-    height: 200px;
-    min-width: 260px;
-    margin-top: 40px;
-    padding-left: 15px;
-  } */

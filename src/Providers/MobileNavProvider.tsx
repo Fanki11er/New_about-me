@@ -77,7 +77,7 @@ const MobileNavProvider = (props: Props) => {
           setIsInProgress(false);
         });
       } else {
-        tl.timeScale(1.7).reverse(10);
+        tl.timeScale(1.2).reverse(10).delay(0.3);
       }
     }
   }, [isMobileNavOpen]);
