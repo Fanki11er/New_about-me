@@ -27,7 +27,8 @@ const PageColorsProvider = (props: Props) => {
   );
 
   useEffect(() => {
-    switch (pathname) {
+    const path = pathname.match(/\/\w+/i);
+    switch (path ? path[0] : pathname) {
       case "/Projects": {
         setCurrentColor(locationsColors.projects);
         break;
