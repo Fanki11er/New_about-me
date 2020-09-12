@@ -220,7 +220,7 @@ const IndexPage = () => {
       },
       "-=1.5"
     );
-  });
+  }, []);
   return (
     <>
       <SEO title="Home" />
