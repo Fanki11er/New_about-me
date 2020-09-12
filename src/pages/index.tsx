@@ -255,10 +255,3 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
-
-/*  @media screen and (max-width: 560px) {
-    height: 200px;
-    min-width: 260px;
-    margin-top: 40px;
-    padding-left: 15px;
-  } */

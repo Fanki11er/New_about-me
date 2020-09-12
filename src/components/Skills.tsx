@@ -25,6 +25,10 @@ const SkillsContainer = styled.section`
   @media screen and (max-width: 1280px) {
     padding: 50px 40px 0 40px;
   }
+
+  @media screen and (max-width: 560px) {
+    padding: 20px 10px 0 10px;
+  }
 `;
 
 const SkillWrapper = styled.div`
@@ -63,6 +67,9 @@ const SkillWrapper = styled.div`
   }
   @media screen and (max-width: 560px) {
     transform: scale(0.8);
+    margin: 30px 0;
+    width: 290px;
+    height: 270px;
   }
 `;
 
