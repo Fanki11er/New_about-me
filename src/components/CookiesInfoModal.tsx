@@ -117,7 +117,9 @@ const CookiesInfoModal = () => {
     "infoRed",
     "gatsby-gdpr-google-analytics",
   ]);
-  const [isInfoRed, setIsInfoRed] = useState(cookies.infoRed);
+  const [isInfoRed, setIsInfoRed] = useState<boolean>(
+    cookies.infoRed ? true : false
+  );
 
   const hideCookieInfo = (userOption: boolean) => {
     setCookie("infoRed", true, { maxAge: 5184000 });
