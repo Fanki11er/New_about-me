@@ -123,18 +123,20 @@ const CookieImage = styled.img`
 
 const CookiesInfoModal = () => {
   const { cookie } = useBackgroundImage();
-  const [cookies, setCookie] = useCookies([
-    "infoRed",
-    "gatsby-gdpr-google-analytics",
-  ]);
+  const [cookies, setCookie] = useCookies(["infoRed"]);
   const [isInfoRed, setIsInfoRed] = useState<boolean>(false);
   useEffect(() => {
     setIsInfoRed(cookies.infoRed);
+    console.log(cookies.isInfoRed);
+    if (!cookies.infoRed) {
+      document.body.classList.add("blocked");
+    }
   }, []);
 
   const hideCookieInfo = (userOption: boolean) => {
     setCookie("infoRed", true, { maxAge: 5184000 });
-    setCookie("gatsby-gdpr-google-analytics", userOption);
+    setCookie("gatsby-gdpr-google-analytics", userOption, { maxAge: 5184000 });
+    document.body.classList.remove("blocked");
     setIsInfoRed(true);
   };
   return (

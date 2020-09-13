@@ -21,6 +21,10 @@ const GlobalStyle = createGlobalStyle`
     width: 100vw;
     min-width: ${mainTheme.minScreen};
     position: relative;
+
+    &.blocked {
+      position: fixed;
+    }
     
 
     
