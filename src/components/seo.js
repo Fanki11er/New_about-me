@@ -36,6 +36,12 @@ function SEO({ description, lang, meta, title }) {
           property: `og:title`,
           content: title,
         },
+
+        {
+          property: `og:image`,
+          content: "./Person.svg",
+        },
+
         {
           property: `og:description`,
           content: metaDescription,

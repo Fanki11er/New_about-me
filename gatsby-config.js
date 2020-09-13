@@ -4,6 +4,7 @@ module.exports = {
     title: `Dziedzic-about-me`,
     description: `This is the personal page of Krzysztof Dziedzic.`,
     author: `Krzysztof Dziedzic`,
+    image: "/Person.svg",
   },
   plugins: [
     {
