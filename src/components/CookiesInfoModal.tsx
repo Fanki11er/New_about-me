@@ -24,7 +24,7 @@ const CookiesInfoWrapper = styled.div`
   opacity: 0;
   animation-name: show;
   animation-duration: 1.5s;
-  animation-delay: 3s;
+  animation-delay: 5s;
   animation-fill-mode: forwards;
 
   @keyframes show {
@@ -34,8 +34,9 @@ const CookiesInfoWrapper = styled.div`
   }
 
   @media screen and (max-width: 560px) {
-    padding: 35px;
+    padding: 35px 35px 15px 35px;
     border-radius: 45px;
+    bottom: 10px;
   }
 `;
 
@@ -63,6 +64,10 @@ const ButtonsWrapper = styled.div`
   margin-top: 50px;
   @media screen and (max-width: 768px) {
     justify-content: space-around;
+  }
+
+  @media screen and (max-width: 560px) {
+    margin-top: 20px;
   }
 `;
 
