@@ -24,7 +24,7 @@ const CookiesInfoWrapper = styled.div`
   opacity: 0;
   animation-name: show;
   animation-duration: 1.5s;
-  animation-delay: 3s;
+  animation-delay: 5s;
   animation-fill-mode: forwards;
 
   @keyframes show {
@@ -34,8 +34,9 @@ const CookiesInfoWrapper = styled.div`
   }
 
   @media screen and (max-width: 560px) {
-    padding: 35px;
+    padding: 35px 35px 15px 35px;
     border-radius: 45px;
+    bottom: 10px;
   }
 `;
 
@@ -63,6 +64,10 @@ const ButtonsWrapper = styled.div`
   margin-top: 50px;
   @media screen and (max-width: 768px) {
     justify-content: space-around;
+  }
+
+  @media screen and (max-width: 560px) {
+    margin-top: 20px;
   }
 `;
 
@@ -118,18 +123,20 @@ const CookieImage = styled.img`
 
 const CookiesInfoModal = () => {
   const { cookie } = useBackgroundImage();
-  const [cookies, setCookie] = useCookies([
-    "infoRed",
-    "gatsby-gdpr-google-analytics",
-  ]);
+  const [cookies, setCookie] = useCookies(["infoRed"]);
   const [isInfoRed, setIsInfoRed] = useState<boolean>(false);
   useEffect(() => {
     setIsInfoRed(cookies.infoRed);
+    console.log(cookies.isInfoRed);
+    if (!cookies.infoRed) {
+      document.body.classList.add("blocked");
+    }
   }, []);
 
   const hideCookieInfo = (userOption: boolean) => {
     setCookie("infoRed", true, { maxAge: 5184000 });
-    setCookie("gatsby-gdpr-google-analytics", userOption);
+    setCookie("gatsby-gdpr-google-analytics", userOption, { maxAge: 5184000 });
+    document.body.classList.remove("blocked");
     setIsInfoRed(true);
   };
   return (
