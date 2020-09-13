@@ -31,7 +31,11 @@ const Wrapper = styled.ul`
   @media screen and (max-width: 560px) {
     &.hide {
       display: none;
+      pointer-events: none;
+      visibility: hidden;
+      z-index: -10;
     }
+
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
