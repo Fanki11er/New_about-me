@@ -154,7 +154,7 @@ const ProjectsButton = styled(AniLink)`
   margin-left: 70px;
   transition: color 0.4s;
   margin-bottom: 25px;
-  z-index: 5;
+  z-index: 7;
 
   &:hover {
     color: ${({ theme }) => theme.turquoise};
