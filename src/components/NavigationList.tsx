@@ -30,9 +30,10 @@ const Wrapper = styled.ul`
 
   @media screen and (max-width: 560px) {
     &.hide {
-      display: none;
-      pointer-events: none;
+      display: none !important;
+      pointer-events: none !important;
       visibility: hidden;
+      transform: scale(0);
       z-index: -10;
     }
 

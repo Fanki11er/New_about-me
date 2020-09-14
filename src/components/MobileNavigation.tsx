@@ -16,7 +16,7 @@ const NavWrapper = styled.nav`
   clip-path: circle(100px at 90% -10%);
   background-color: ${(props: Color) => props.color};
   min-width: 360px;
-  z-index: 7;
+  z-index: 8;
   transition: background-color 0.5s;
   display: none;
 
