@@ -18,6 +18,7 @@ export type MainPageImages = {
   o4o_image: string;
   source: string;
   cookie: string;
+  person_preview: string;
 };
 
 export type SkillType = {
