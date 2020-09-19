@@ -43,6 +43,14 @@ function SEO({ description, lang, meta, title }) {
           property: `og:image`,
           content: person_preview,
         },
+        {
+          property: `og:image:width`,
+          content: `340`,
+        },
+        {
+          property: `og:image:height`,
+          content: `260,`,
+        },
 
         {
           property: `og:description`,
