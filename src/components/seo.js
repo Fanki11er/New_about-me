@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import useBackgroundImage from "../Hooks/useBackgroundImage";
 
 function SEO({ description, lang, meta, title }) {
-  const { person } = useBackgroundImage();
+  const { person_preview } = useBackgroundImage();
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -41,7 +41,7 @@ function SEO({ description, lang, meta, title }) {
 
         {
           property: `og:image`,
-          content: person,
+          content: person_preview,
         },
 
         {
