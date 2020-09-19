@@ -45,11 +45,11 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image:width`,
-          content: `340`,
+          content: `170`,
         },
         {
           property: `og:image:height`,
-          content: `260,`,
+          content: `130`,
         },
 
         {
