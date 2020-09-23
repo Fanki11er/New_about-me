@@ -67,7 +67,11 @@ const MobileNavProvider = (props: Props) => {
           },
           "=-0.7"
         )
-        .to(buttonRef!, { right: "+=9", duration: 0.5 }, "-=1")
+        .to(
+          buttonRef!,
+          { right: "+=9", fill: "url(#MenuButton)", duration: 0.5 },
+          "-=1"
+        )
         .to(arrow!, { translateX: "-=15", duration: 0.5 }, "-=1")
         .to(arrow!, { rotate: 90, duration: 0.5 }, "-=0.6")
         .paused(true);
