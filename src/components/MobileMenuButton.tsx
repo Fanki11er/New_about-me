@@ -13,6 +13,7 @@ const ButtonIcon = styled.svg`
 
   @media screen and (max-width: 560px) {
     display: initial;
+    fill: "url(#MenuButton)";
   }
 `;
 

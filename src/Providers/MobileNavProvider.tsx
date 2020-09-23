@@ -41,7 +41,7 @@ const MobileNavProvider = (props: Props) => {
       const arrow = buttonRef.querySelector("#Arrow");
       const tl = gsap.timeline();
       tl.set(navigation!, { clipPath: "circle(100px at 90% -10%)" });
-      tl.set(links!, { opacity: 0 });
+      tl.set(links!, { opacity: 0, display: "none" });
       tl.set(buttonRef, { right: -10 });
       tl.set(arrow!, {
         translateX: "272",
@@ -53,6 +53,7 @@ const MobileNavProvider = (props: Props) => {
         clipPath: "circle(1000px at 90% -10%)",
         duration: "1",
       })
+        .to(links!, { display: "initial" }, "=-0.5")
         .to(
           links,
           {
@@ -66,7 +67,11 @@ const MobileNavProvider = (props: Props) => {
           },
           "=-0.7"
         )
-        .to(buttonRef!, { right: "+=9", duration: 0.5 }, "-=1")
+        .to(
+          buttonRef!,
+          { right: "+=9", fill: "url(#MenuButton)", duration: 0.5 },
+          "-=1"
+        )
         .to(arrow!, { translateX: "-=15", duration: 0.5 }, "-=1")
         .to(arrow!, { rotate: 90, duration: 0.5 }, "-=0.6")
         .paused(true);
