@@ -36,7 +36,7 @@ const FooterBackground = () => {
     >
       <defs>
         <linearGradient
-          id="lg1"
+          id="FooterLg1"
           x1="0.015"
           y1="0.5"
           x2="1"
@@ -47,7 +47,7 @@ const FooterBackground = () => {
           <stop offset="1" stopColor="#f86e68" />
         </linearGradient>
         <linearGradient
-          id="lg2"
+          id="FooterLg2"
           y1="0.5"
           x2="1"
           y2="0.5"
@@ -57,7 +57,7 @@ const FooterBackground = () => {
           <stop offset="1" stopColor="#7d98fb" />
         </linearGradient>
         <linearGradient
-          id="lg4"
+          id="FooterLg4"
           x1="0.987"
           y1="0.5"
           x2="0.032"
@@ -68,7 +68,7 @@ const FooterBackground = () => {
           <stop offset="1" stopColor="#5682b4" />
         </linearGradient>
         <linearGradient
-          id="lg5"
+          id="FooterLg5"
           y1="0.5"
           x2="0.984"
           y2="0.5"
@@ -92,7 +92,7 @@ const FooterBackground = () => {
             transform="translate(103 1163)"
             stroke="rgba(112,112,112,0)"
             strokeWidth="1"
-            fill="url(#lg1)"
+            fill="url(#FooterLg1)"
           >
             <rect width="206" height="24" rx="12" stroke="none" />
             <rect
@@ -110,7 +110,7 @@ const FooterBackground = () => {
             transform="translate(271 1226)"
             stroke="rgba(112,112,112,0)"
             strokeWidth="1"
-            fill="url(#lg2)"
+            fill="url(#FooterLg2)"
           >
             <rect width="190" height="24" rx="12" stroke="none" />
             <rect
@@ -128,7 +128,7 @@ const FooterBackground = () => {
             transform="translate(1239 1224)"
             stroke="rgba(112,112,112,0)"
             strokeWidth="1"
-            fill="url(#lg1)"
+            fill="url(#FooterLg1)"
           >
             <rect width="347" height="24" rx="12" stroke="none" />
             <rect
@@ -165,7 +165,7 @@ const FooterBackground = () => {
             height="24"
             rx="12"
             transform="translate(1348 1038)"
-            fill="url(#lg4)"
+            fill="url(#FooterLg4)"
           />
           <g
             id="Rectangle_110"
@@ -191,7 +191,7 @@ const FooterBackground = () => {
             transform="translate(968 1162)"
             stroke="rgba(112,112,112,0)"
             strokeWidth="1"
-            fill="url(#lg5)"
+            fill="url(#FooterLg5)"
           >
             <rect width="380" height="24" rx="12" stroke="none" />
             <rect
