@@ -103,6 +103,12 @@ const HeaderWrapper = styled.div`
   margin: 0 0 40px 90px;
   opacity: 0;
 
+  #second-main-header,
+  #second-small-header {
+    opacity: 0;
+    display: none;
+  }
+
   @media screen and (max-width: 768px) {
     margin: 0 0 40px 30px;
   }
@@ -112,32 +118,74 @@ const HeaderWrapper = styled.div`
 `;
 
 const SmallHeader = styled.h2`
+  position: absolute;
+  top: 0;
+  left: 0;
   color: ${({ theme }) => theme.veryLightBlue};
-  margin: 15px 0 20px 0;
+  margin: 10px 0 20px 10px;
+  span {
+    color: ${({ theme }) => theme.orange};
+  }
   @media screen and (max-width: 1024px) {
   }
 
   @media screen and (max-width: 960px) {
     font-size: calc(${({ theme }) => theme.fontSizes.S} - 0.3rem);
-    margin: 15px 0 10px 0;
+    margin: 20px 0 10px 8px;
   }
-  @media screen and (max-width: 560px) {
-    margin: 15px 0 5px 0;
+  @media screen and (max-width: 768px) {
+    font-size: calc(${({ theme }) => theme.fontSizes.S} - 0.3rem);
+    margin: 15px 0 10px 8px;
+  }
+`;
+
+const SecondSmallHeder = styled(SmallHeader)`
+  top: initial;
+  bottom: -80px;
+  left: 290px;
+  @media screen and (min-width: 1600px) {
+    bottom: -80px;
+    left: 200px;
+  }
+  @media screen and (max-width: 1280px) {
+    bottom: -55px;
+    left: 150px;
+  }
+
+  @media screen and (max-width: 960px) {
+    bottom: -20px;
+    left: 80px;
+  }
+  @media screen and (max-width: 768px) {
+    left: 85px;
+  }
+  @media screen and (max-width: 768px) {
+    left: 95px;
+    bottom: -25px;
   }
 `;
 
 const MainHeader = styled.h1`
+  position: absolute;
+  bottom: -15px;
+  left: 0;
   color: ${({ theme }) => theme.veryLightBlue};
-  margin: 10px 0 15px 0;
+  margin: 0 0 20px 0;
   span {
     color: ${({ theme }) => theme.orange};
+    margin-left: 5px;
   }
 
   @media screen and (max-width: 960px) {
     font-size: calc(${({ theme }) => theme.fontSizes.M} - 0.3rem);
+    margin: 0 0 35px 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 0px 0 25px 0;
   }
   @media screen and (max-width: 560px) {
-    margin: 5px 0 5px 0;
+    margin: 5px 0 20px 0;
   }
 `;
 
@@ -199,9 +247,14 @@ const IndexPage = () => {
   useEffect(() => {
     const header = headerWrapper.current;
     const span = header!.querySelector("span");
+    const smallHeader = header!.querySelector("#small-header");
+    const secondSmallHeader = header!.querySelector("#second-small-header");
+    const firstMainHeader = header!.querySelector("#first-main-header");
+    const secondMainHeader = header!.querySelector("#second-main-header");
     const tl = gsap.timeline({
       defaults: { ease: "power3.inOut" },
     });
+
     tl.fromTo(
       header,
       { autoAlpha: "0", scale: "0.8" },
@@ -211,15 +264,26 @@ const IndexPage = () => {
         autoAlpha: "1",
         scale: "1",
       }
-    ).fromTo(
-      span,
-      { autoAlpha: "0" },
-      {
-        duration: "1",
-        autoAlpha: 1,
-      },
-      "-=1.5"
-    );
+    )
+      .fromTo(
+        span,
+        { autoAlpha: "0" },
+        {
+          duration: "1",
+          autoAlpha: 1,
+        },
+        "-=1.5"
+      )
+      .to([smallHeader!, firstMainHeader!], {
+        autoAlpha: 0,
+        duration: 2,
+        delay: 1,
+      })
+      .to(
+        [secondMainHeader!, secondSmallHeader!],
+        { display: "initial", opacity: 1, duration: 3 },
+        "-=2"
+      );
   }, []);
   return (
     <>
@@ -229,9 +293,18 @@ const IndexPage = () => {
           <TitleWrapper>
             <Title>
               <HeaderWrapper ref={headerWrapper}>
-                <SmallHeader>I'm aspiring to become a </SmallHeader>
-                <MainHeader>
+                <SmallHeader id={"small-header"}>
+                  <span>K</span>rzysztof <span>Dz</span>iedzic{" "}
+                </SmallHeader>
+                <SecondSmallHeder id={"second-small-header"}>
+                  <span>K</span>rzysztof <span>Dz</span>iedzic
+                </SecondSmallHeder>
+                <MainHeader id={"first-main-header"}>
                   <span>Junior</span> Front-end developer
+                </MainHeader>
+                <MainHeader id={"second-main-header"}>
+                  A <span>reinforcement</span> for <br />
+                  your development <span>team</span>
                 </MainHeader>
               </HeaderWrapper>
 
