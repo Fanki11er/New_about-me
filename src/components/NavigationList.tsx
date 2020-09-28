@@ -60,22 +60,22 @@ const ListElement = styled.li`
     transition: color 0.5s, border 0.2s, box-shadow 0.5s;
 
     &:hover {
-      color: ${({ theme }) => theme.turquoise};
-      border: 2px solid ${({ theme }) => theme.turquoise};
-      box-shadow: 0 0 4px 1px ${({ theme }) => theme.turquoise};
+      color: ${({ theme }) => theme.veryLightBlue};
+      border: 2px solid ${({ theme }) => theme.veryLightBlue};
+      box-shadow: 0 0 4px 1px ${({ theme }) => theme.veryLightBlue};
       border: 2px solid transparent;
       .icon {
-        color: ${({ theme }) => theme.turquoise};
+        color: ${({ theme }) => theme.veryLightBlue};
       }
     }
   }
   .isActive {
-    color: ${({ theme }) => theme.turquoise};
-    border: 2px solid ${({ theme }) => theme.turquoise};
+    color: ${({ theme }) => theme.veryLightBlue};
+    border: 2px solid ${({ theme }) => theme.veryLightBlue};
     pointer-events: none;
     cursor: initial;
     .icon {
-      color: ${({ theme }) => theme.turquoise};
+      color: ${({ theme }) => theme.veryLightBlue};
     }
   }
   .icon {
