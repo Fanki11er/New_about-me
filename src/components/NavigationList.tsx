@@ -41,6 +41,7 @@ const Wrapper = styled.ul`
     align-items: center;
     justify-content: flex-start;
     padding: 120px 0 100px 0;
+    transform: scale(0);
   }
 `;
 
