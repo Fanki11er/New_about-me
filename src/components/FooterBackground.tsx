@@ -19,6 +19,10 @@ const BackgroundSvg = styled.svg`
   @media screen and (max-width: 568px) {
     height: 30vw;
   }
+
+  #Rectangle_103 {
+    fill: url("#FooterLg1");
+  }
 `;
 
 const FooterBackground = () => {
@@ -41,7 +45,7 @@ const FooterBackground = () => {
           y1="0.5"
           x2="1"
           y2="0.5"
-          //gradientUnits="objectBoundingBox"
+          gradientUnits="objectBoundingBox"
         >
           <stop offset="0" stopColor="#f9d377" />
           <stop offset="1" stopColor="#f86e68" />
@@ -51,7 +55,7 @@ const FooterBackground = () => {
           y1="0.5"
           x2="1"
           y2="0.5"
-          //gradientUnits="objectBoundingBox"
+          gradientUnits="objectBoundingBox"
         >
           <stop offset="0" stopColor="#e498f1" />
           <stop offset="1" stopColor="#7d98fb" />
@@ -62,7 +66,7 @@ const FooterBackground = () => {
           y1="0.5"
           x2="0.032"
           y2="0.5"
-          //gradientUnits="objectBoundingBox"
+          gradientUnits="objectBoundingBox"
         >
           <stop offset="0" stopColor="#52becc" />
           <stop offset="1" stopColor="#5682b4" />
@@ -72,7 +76,7 @@ const FooterBackground = () => {
           y1="0.5"
           x2="0.984"
           y2="0.5"
-          //gradientUnits="objectBoundingBox"
+          gradientUnits="objectBoundingBox"
         >
           <stop offset="0" stopColor="#5e8ccc" />
           <stop offset="1" stopColor="#41ecc5" />
@@ -90,9 +94,8 @@ const FooterBackground = () => {
             id="Rectangle_103"
             data-name="Rectangle 103"
             transform="translate(103 1163)"
-            stroke="rgba(112,112,112,0)"
+            stroke="transparent"
             strokeWidth="1"
-            fill="url('#FooterLg1')"
           >
             <rect width="206" height="24" rx="12" stroke="none" />
             <rect
@@ -101,16 +104,16 @@ const FooterBackground = () => {
               width="205"
               height="23"
               rx="11.5"
-              fill="none"
+              fill="url(#FooterLg1)"
             />
           </g>
           <g
             id="Rectangle_104"
             data-name="Rectangle 104"
             transform="translate(271 1226)"
-            stroke="rgba(112,112,112,0)"
+            stroke="transparent"
             strokeWidth="1"
-            fill="url('#FooterLg2')"
+            fill="url(#FooterLg2)"
           >
             <rect width="190" height="24" rx="12" stroke="none" />
             <rect
@@ -119,16 +122,16 @@ const FooterBackground = () => {
               width="189"
               height="23"
               rx="11.5"
-              fill="none"
+              fill="url(#FooterLg2)"
             />
           </g>
           <g
             id="Rectangle_106"
             data-name="Rectangle 106"
             transform="translate(1239 1224)"
-            stroke="rgba(112,112,112,0)"
+            stroke="transparent"
             strokeWidth="1"
-            fill="url('#FooterLg1')"
+            fill="url(#FooterLg1)"
           >
             <rect width="347" height="24" rx="12" stroke="none" />
             <rect
@@ -137,7 +140,7 @@ const FooterBackground = () => {
               width="346"
               height="23"
               rx="11.5"
-              fill="none"
+              fill="url('#FooterLg1')"
             />
           </g>
           <g
@@ -145,7 +148,7 @@ const FooterBackground = () => {
             data-name="Rectangle 108"
             transform="translate(1413 1096)"
             fill="#adadad"
-            stroke="rgba(112,112,112,0)"
+            stroke="transparent"
             strokeWidth="1"
           >
             <rect width="202" height="24" rx="12" stroke="none" />
@@ -155,7 +158,7 @@ const FooterBackground = () => {
               width="201"
               height="23"
               rx="11.5"
-              fill="none"
+              fill="#adadad"
             />
           </g>
           <rect
@@ -165,14 +168,14 @@ const FooterBackground = () => {
             height="24"
             rx="12"
             transform="translate(1348 1038)"
-            fill="url('#FooterLg4')"
+            fill="url(#FooterLg4)"
           />
           <g
             id="Rectangle_110"
             data-name="Rectangle 110"
             transform="translate(332 1163)"
             fill="#adadad"
-            stroke="rgba(112,112,112,0)"
+            stroke="transparent"
             strokeWidth="1"
           >
             <rect width="22" height="24" rx="11" stroke="none" />
@@ -182,16 +185,16 @@ const FooterBackground = () => {
               width="21"
               height="23"
               rx="10.5"
-              fill="none"
+              fill="#adadad"
             />
           </g>
           <g
             id="Rectangle_122"
             data-name="Rectangle 122"
             transform="translate(968 1162)"
-            stroke="rgba(112,112,112,0)"
+            stroke="transparent"
             strokeWidth="1"
-            fill="url('#FooterLg5')"
+            fill="url(#FooterLg5)"
           >
             <rect width="380" height="24" rx="12" stroke="none" />
             <rect
@@ -200,7 +203,7 @@ const FooterBackground = () => {
               width="379"
               height="23"
               rx="11.5"
-              fill="none"
+              fill="url(#FooterLg5)"
             />
           </g>
         </g>
