@@ -297,7 +297,7 @@ const IndexPage = () => {
                   <span>K</span>rzysztof <span>Dz</span>iedzic{" "}
                 </SmallHeader>
                 <SecondSmallHeder id={"second-small-header"}>
-                  <span>K</span>rzysztof <span>Dz</span>iedzic
+                  <span>K</span>rzysztof Dzie<span>dz</span>ic
                 </SecondSmallHeder>
                 <MainHeader id={"first-main-header"}>
                   <span>Junior</span> Front-end developer

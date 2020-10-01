@@ -37,12 +37,15 @@ const MobileNavProvider = (props: Props) => {
     if (refToButton && refToNavigation) {
       const buttonRef = refToButton?.current;
       const navigation = refToNavigation?.current;
+      const navigationList = navigation!.querySelector("ul");
       const links = navigation.querySelectorAll("li");
       const arrow = buttonRef.querySelector("#Arrow");
       const tl = gsap.timeline();
       tl.set(navigation!, {
         clipPath: "circle(100px at 90% -10%)",
-        translateX: 700,
+      });
+      tl.set(navigationList!, {
+        scale: 0,
       });
       tl.set(links!, { opacity: 0, display: "none" });
       tl.set(buttonRef, { right: -10 });
@@ -52,7 +55,7 @@ const MobileNavProvider = (props: Props) => {
         transformOrigin: "center",
       });
 
-      tl.to(navigation!, { translateX: 0 })
+      tl.to(navigationList!, { scale: 1 })
         .to(navigation!, {
           clipPath: "circle(1000px at 90% -10%)",
           duration: "1",
