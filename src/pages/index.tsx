@@ -189,6 +189,34 @@ const MainHeader = styled.h1`
   }
 `;
 
+const SkillsSectionHeader = styled.h2`
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 92%;
+  margin: 150px auto 80px auto;
+  height: 140px;
+  background-color: ${({ theme }) => theme.lightGray};
+  border-radius: 50px;
+  font-size: ${({ theme }) => theme.fontSizes.XL};
+  color: ${({ theme }) => theme.darkerBlue};
+  padding-right: 130px;
+  font-family: "Montserrat";
+  span {
+    color: ${({ theme }) => theme.orange};
+    margin: 0 10px;
+  }
+`;
+
+const ToolsImage = styled.img`
+  width: 245px;
+  height: 245px;
+  position: absolute;
+  top: -50px;
+  left: 60px;
+`;
+
 const ProjectsButton = styled(AniLink)`
   display: flex;
   justify-content: center;
@@ -240,7 +268,7 @@ const ProjectsButton = styled(AniLink)`
 `;
 
 const IndexPage = () => {
-  const { hero } = useBackgroundImage();
+  const { hero, tools } = useBackgroundImage();
   const { currentColor } = useContext(PageColorsContext);
 
   const headerWrapper = useRef<HTMLDivElement>(null);
@@ -322,6 +350,10 @@ const IndexPage = () => {
           <HeroImage src={hero} alt={"Hero image"} />
         </>
       </TopWrapper>
+      <SkillsSectionHeader>
+        <ToolsImage src={tools} alt={"Tools image"} />
+        Engineering with the <span>best tools</span> behind my belt
+      </SkillsSectionHeader>
       <Skills />
     </>
   );
