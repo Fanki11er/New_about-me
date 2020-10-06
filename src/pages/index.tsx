@@ -165,11 +165,13 @@ const SecondSmallHeder = styled(SmallHeader)`
   }
 `;
 
-const MainHeader = styled.h1`
+const MainHeader = styled.div`
   position: absolute;
   bottom: -15px;
   left: 0;
   color: ${({ theme }) => theme.veryLightBlue};
+  font-size: ${({ theme }) => theme.fontSizes.L};
+  font-weight: bold;
   margin: 0 0 20px 0;
   span {
     color: ${({ theme }) => theme.orange};
@@ -190,31 +192,102 @@ const MainHeader = styled.h1`
 `;
 
 const SkillsSectionHeader = styled.h2`
-  position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   width: 92%;
+  max-width: 1460px;
   margin: 150px auto 80px auto;
-  height: 140px;
+  height: 110px;
   background-color: ${({ theme }) => theme.lightGray};
   border-radius: 50px;
-  font-size: ${({ theme }) => theme.fontSizes.XL};
   color: ${({ theme }) => theme.darkerBlue};
-  padding-right: 130px;
   font-family: "Montserrat";
+
+  @media screen and (max-width: 960px) {
+    margin: 120px auto 70px auto;
+  }
+
+  @media screen and (max-width: 568px) {
+    width: 100%;
+    flex-direction: column;
+    height: 180px;
+    margin: 110px auto 40px auto;
+  }
+`;
+
+const SkillsSectionHeaderText = styled.span`
+  font-size: ${({ theme }) => theme.fontSizes.L};
+  width: 80%;
+  padding: 0 8% 0 8%;
   span {
     color: ${({ theme }) => theme.orange};
     margin: 0 10px;
+    width: 70%;
+    height: 100%;
+    @media screen and (max-width: 568px) {
+      margin: 2px 0;
+      height: 35px;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    padding: 0 5% 0 8%;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 0 10% 0 20%;
+  }
+
+  @media screen and (max-width: 960px) {
+    font-size: ${({ theme }) => theme.fontSizes.M};
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 90%;
+    padding: 0 5% 0 20%;
+  }
+  @media screen and (max-width: 568px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    padding: 0 20px;
+  }
+`;
+
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 20%;
+  height: 100%;
+  @media screen and (max-width: 768px) {
+    width: 10%;
+  }
+  @media screen and (max-width: 568px) {
+    width: 100%;
+    height: 30%;
   }
 `;
 
 const ToolsImage = styled.img`
-  width: 245px;
-  height: 245px;
+  width: 180px;
+  height: 180px;
   position: absolute;
-  top: -50px;
-  left: 60px;
+  top: -35px;
+  left: 30%;
+  @media screen and (max-width: 768px) {
+    width: 130px;
+    height: 130px;
+    top: -10%;
+  }
+  @media screen and (max-width: 568px) {
+    width: 110px;
+    height: 110px;
+    top: -65px;
+    left: calc(50% - 55px);
+  }
 `;
 
 const ProjectsButton = styled(AniLink)`
@@ -351,8 +424,13 @@ const IndexPage = () => {
         </>
       </TopWrapper>
       <SkillsSectionHeader>
-        <ToolsImage src={tools} alt={"Tools image"} />
-        Engineering with the <span>best tools</span> behind my belt
+        <ImageWrapper>
+          <ToolsImage src={tools} alt={"Tools image"} />
+        </ImageWrapper>
+
+        <SkillsSectionHeaderText>
+          Engineering with <span>the best tools</span> behind my belt
+        </SkillsSectionHeaderText>
       </SkillsSectionHeader>
       <Skills />
     </>
