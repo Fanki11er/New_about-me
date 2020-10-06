@@ -395,7 +395,7 @@ const IndexPage = () => {
             <Title>
               <HeaderWrapper ref={headerWrapper}>
                 <SmallHeader id={"small-header"}>
-                  <span>K</span>rzysztof <span>Dz</span>iedzic{" "}
+                  <span>K</span>rzysztof Dzie<span>dz</span>ic
                 </SmallHeader>
                 <SecondSmallHeder id={"second-small-header"}>
                   <span>K</span>rzysztof Dzie<span>dz</span>ic
