@@ -18,6 +18,7 @@ export const ImagesContext = React.createContext({
     source: "",
     cookie: "",
     person_preview: "",
+    tools: "",
   },
 });
 interface Props {

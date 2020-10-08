@@ -165,27 +165,135 @@ const SecondSmallHeder = styled(SmallHeader)`
   }
 `;
 
-const MainHeader = styled.h1`
+const MainHeader = styled.div`
   position: absolute;
   bottom: -15px;
   left: 0;
   color: ${({ theme }) => theme.veryLightBlue};
+  font-size: ${({ theme }) => theme.fontSizes.L};
+  font-weight: bold;
   margin: 0 0 20px 0;
+  line-height: 40px;
   span {
     color: ${({ theme }) => theme.orange};
     margin-left: 5px;
   }
+  @media screen and (min-width: 1600px) {
+    line-height: 55px;
+    margin: 20px 0 0 0;
+  }
 
   @media screen and (max-width: 960px) {
     font-size: calc(${({ theme }) => theme.fontSizes.M} - 0.3rem);
-    margin: 0 0 35px 0;
+    margin: 5px 0 35px 0;
+    line-height: 30px;
   }
 
   @media screen and (max-width: 768px) {
     margin: 0px 0 25px 0;
+    line-height: 25px;
   }
   @media screen and (max-width: 560px) {
     margin: 5px 0 20px 0;
+  }
+`;
+
+const SkillsSectionHeader = styled.h2`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 92%;
+  max-width: 1460px;
+  margin: 150px auto 80px auto;
+  height: 110px;
+  background-color: ${({ theme }) => theme.lightGray};
+  border-radius: 50px;
+  color: ${({ theme }) => theme.darkerBlue};
+  font-family: "Montserrat";
+
+  @media screen and (max-width: 960px) {
+    margin: 120px auto 70px auto;
+  }
+
+  @media screen and (max-width: 568px) {
+    width: 100%;
+    flex-direction: column;
+    height: 180px;
+    margin: 110px auto 40px auto;
+  }
+`;
+
+const SkillsSectionHeaderText = styled.span`
+  font-size: ${({ theme }) => theme.fontSizes.L};
+  width: 80%;
+  padding: 0 8% 0 8%;
+  span {
+    color: ${({ theme }) => theme.orange};
+    margin: 0 10px;
+    width: 70%;
+    height: 100%;
+    @media screen and (max-width: 568px) {
+      margin: 2px 0;
+      height: 35px;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    padding: 0 5% 0 8%;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 0 10% 0 20%;
+  }
+
+  @media screen and (max-width: 960px) {
+    font-size: ${({ theme }) => theme.fontSizes.M};
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 90%;
+    padding: 0 5% 0 20%;
+  }
+  @media screen and (max-width: 568px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    padding: 0 20px;
+  }
+`;
+
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 20%;
+  height: 100%;
+  @media screen and (max-width: 768px) {
+    width: 10%;
+  }
+  @media screen and (max-width: 568px) {
+    width: 100%;
+    height: 30%;
+  }
+`;
+
+const ToolsImage = styled.img`
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  top: -35px;
+  left: 30%;
+  @media screen and (max-width: 768px) {
+    width: 130px;
+    height: 130px;
+    top: -10%;
+  }
+  @media screen and (max-width: 568px) {
+    width: 110px;
+    height: 110px;
+    top: -65px;
+    left: calc(50% - 55px);
   }
 `;
 
@@ -197,7 +305,7 @@ const ProjectsButton = styled(AniLink)`
   height: 65px;
   background-color: ${({ theme }) => theme.dark};
   border-radius: 20px;
-  color: white;
+  color: ${({ theme }) => theme.turquoise};
   font-size: ${({ theme }) => theme.fontSizes.M};
   margin-left: 70px;
   transition: color 0.4s;
@@ -205,13 +313,13 @@ const ProjectsButton = styled(AniLink)`
   z-index: 7;
 
   &:hover {
-    color: ${({ theme }) => theme.turquoise};
+    color: ${({ theme }) => theme.veryLightBlue};
     &:visited {
-      color: ${({ theme }) => theme.turquoise};
+      color: ${({ theme }) => theme.veryLightBlue};
     }
   }
   &:visited {
-    color: white;
+    color: ${({ theme }) => theme.turquoise};
   }
 
   @media screen and (max-width: 1280px) {
@@ -240,7 +348,7 @@ const ProjectsButton = styled(AniLink)`
 `;
 
 const IndexPage = () => {
-  const { hero } = useBackgroundImage();
+  const { hero, tools } = useBackgroundImage();
   const { currentColor } = useContext(PageColorsContext);
 
   const headerWrapper = useRef<HTMLDivElement>(null);
@@ -294,7 +402,7 @@ const IndexPage = () => {
             <Title>
               <HeaderWrapper ref={headerWrapper}>
                 <SmallHeader id={"small-header"}>
-                  <span>K</span>rzysztof <span>Dz</span>iedzic{" "}
+                  <span>K</span>rzysztof Dzie<span>dz</span>ic
                 </SmallHeader>
                 <SecondSmallHeder id={"second-small-header"}>
                   <span>K</span>rzysztof Dzie<span>dz</span>ic
@@ -322,6 +430,15 @@ const IndexPage = () => {
           <HeroImage src={hero} alt={"Hero image"} />
         </>
       </TopWrapper>
+      <SkillsSectionHeader>
+        <ImageWrapper>
+          <ToolsImage src={tools} alt={"Tools image"} />
+        </ImageWrapper>
+
+        <SkillsSectionHeaderText>
+          Engineering with <span>the best tools</span> behind my belt
+        </SkillsSectionHeaderText>
+      </SkillsSectionHeader>
       <Skills />
     </>
   );

@@ -19,6 +19,7 @@ export type MainPageImages = {
   source: string;
   cookie: string;
   person_preview: string;
+  tools: string;
 };
 
 export type SkillType = {

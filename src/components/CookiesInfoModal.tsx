@@ -17,6 +17,7 @@ const CookiesInfoWrapper = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   border-radius: 75px;
+  border: 2px solid ${({ theme }) => theme.gray};
   margin-left: 5%;
   z-index: 100;
   padding: 55px;

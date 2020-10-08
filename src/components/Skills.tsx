@@ -92,18 +92,10 @@ const DescriptionWrapper = styled.div`
   transition: clip-path 0.5s 0.2s, background-color 0.5s 0.2s;
 `;
 
-const SkillLevel = styled.h2`
-  align-self: flex-start;
-  color: ${({ theme }) => theme.darkerBlue};
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.7s 0.3s;
-  color: white;
-`;
-
 const List = styled.ul`
   opacity: 0;
   transition: opacity 0.7s 0.3s;
+  margin-top: 40px;
 `;
 
 const SkillDescription = styled.li`
@@ -122,7 +114,6 @@ const Skills = () => {
           logo {
             url
           }
-          level
           skills {
             id
             skillDescription
@@ -143,11 +134,10 @@ const renderSkill = (skills: SkillInterface) => {
     allDatoCmsTechnology: { nodes },
   } = skills;
 
-  return nodes.map(({ technologyName, level, logo, skills }) => {
+  return nodes.map(({ technologyName, logo, skills }) => {
     return (
       <SkillWrapper key={technologyName} imageUrl={logo.url}>
         <DescriptionWrapper className={"description"}>
-          <SkillLevel className={"level"}>{level}</SkillLevel>
           <List className={"list"}>
             {skills.map(({ skillDescription, id }) => {
               return (
