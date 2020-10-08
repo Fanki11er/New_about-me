@@ -173,18 +173,25 @@ const MainHeader = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.L};
   font-weight: bold;
   margin: 0 0 20px 0;
+  line-height: 40px;
   span {
     color: ${({ theme }) => theme.orange};
     margin-left: 5px;
   }
+  @media screen and (min-width: 1600px) {
+    line-height: 55px;
+    margin: 20px 0 0 0;
+  }
 
   @media screen and (max-width: 960px) {
     font-size: calc(${({ theme }) => theme.fontSizes.M} - 0.3rem);
-    margin: 0 0 35px 0;
+    margin: 5px 0 35px 0;
+    line-height: 30px;
   }
 
   @media screen and (max-width: 768px) {
     margin: 0px 0 25px 0;
+    line-height: 25px;
   }
   @media screen and (max-width: 560px) {
     margin: 5px 0 20px 0;
