@@ -305,7 +305,7 @@ const ProjectsButton = styled(AniLink)`
   height: 65px;
   background-color: ${({ theme }) => theme.dark};
   border-radius: 20px;
-  color: white;
+  color: ${({ theme }) => theme.turquoise};
   font-size: ${({ theme }) => theme.fontSizes.M};
   margin-left: 70px;
   transition: color 0.4s;
@@ -313,13 +313,13 @@ const ProjectsButton = styled(AniLink)`
   z-index: 7;
 
   &:hover {
-    color: ${({ theme }) => theme.turquoise};
+    color: ${({ theme }) => theme.veryLightBlue};
     &:visited {
-      color: ${({ theme }) => theme.turquoise};
+      color: ${({ theme }) => theme.veryLightBlue};
     }
   }
   &:visited {
-    color: white;
+    color: ${({ theme }) => theme.turquoise};
   }
 
   @media screen and (max-width: 1280px) {
