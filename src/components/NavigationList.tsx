@@ -55,7 +55,7 @@ const ListElement = styled.li`
     width: 100%;
     display: flex;
     transition: filter 0.5s, box-shadow 0.5s;
-    border: 2px solid ${({ theme }) => theme.transparentGray};
+    border: 2px solid ${({ theme }) => theme.menuBlue};
     border-radius: 45px;
     height: 35px;
     transition: color 0.5s, border 0.2s, box-shadow 0.5s;
@@ -84,7 +84,7 @@ const ListElement = styled.li`
     height: 25px;
     margin: 0 5px 0 10px;
     align-self: center;
-    color: ${({ theme }) => theme.transparentGray};
+    color: ${({ theme }) => theme.menuBlue};
     transition: color 0.5s;
   }
 

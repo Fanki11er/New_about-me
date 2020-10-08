@@ -44,14 +44,14 @@ const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
-    color: ${mainTheme.transparentGray};
+    color: ${mainTheme.menuBlue};
   }
   a:hover {
     cursor: pointer;
   }
   a:visited {
     text-decoration: none;
-    color: ${mainTheme.transparentGray};
+    color: ${mainTheme.menuBlue};
   }
 .withError {
   border: 2px solid ${mainTheme.red};
