@@ -136,7 +136,12 @@ const AboutPage = () => {
               About<span>me</span>
             </StyledHeader>
           </HeaderWrapper>
-          <CvButton href={url} target="_blank">
+          <CvButton
+            href={
+              "https://www.datocms-assets.com/32060/1655574458-cv-pl-strona.pdf"
+            }
+            target="_blank"
+          >
             Open <span>CV</span>
           </CvButton>
           <PersonImage src={person} alt={"Standing person"} />
