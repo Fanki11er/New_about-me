@@ -47,16 +47,16 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-transition-link`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
         fonts: [
           {
-            family: `Roboto`,
-            variants: [`400`, `700`],
+            family: "Roboto",
+            weights: ["400", "700"],
           },
           {
-            family: `Montserrat`,
-            variants: [`400`, `700`],
+            family: "Montserrat",
+            weights: ["400", "700"],
           },
         ],
       },
@@ -98,5 +98,21 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+
+    /*  {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Roboto`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Montserrat`,
+            variants: [`400`, `700`],
+          },
+        ],
+      },
+    }, */
   ],
 };
