@@ -138,7 +138,7 @@ const AboutPage = () => {
           </HeaderWrapper>
           <CvButton
             href={
-              "https://www.datocms-assets.com/32060/1655574458-cv-pl-strona.pdf"
+              "https://www.datocms-assets.com/32060/1655627524-cv-pl-strona.pdf"
             }
             target="_blank"
           >
